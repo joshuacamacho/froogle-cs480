@@ -1,0 +1,22 @@
+8/1
+Present: Everyone
+LOG
+
+joshuajcamacho [11:25 AM] 
+Standup: Today I will set up AWS and learn materialize.css
+[11:25] 
+Yesterday: Nothing
+
+thomaslv [11:25 AM] 
+Standup: Today I will check out some relevant node and express tutorials. I will set up mongodb as well.
+[11:26] 
+Blocks: mongodb cant be set up until AWS is.
+
+ben [11:26 AM] 
+Today Nathan and  I will start the requirements doc and look up some tutorials on node and express
+
+joshuajcamacho [11:36 AM] 
+I'll also be posting standup to GitHub
+
+divya1224 [11:39 AM] 
+I will learn express node and will work on how to get recipes
