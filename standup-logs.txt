@@ -20,3 +20,263 @@ I'll also be posting standup to GitHub
 
 divya1224 [11:39 AM] 
 I will learn express node and will work on how to get recipes
+
+
+---------------------------------------------------------------------------------------
+8/2
+Present: Everyone
+LOG
+
+joshuajcamacho [8:59 AM] 
+@channel  standup in one minute
+
+
+[9:03] 
+Yesterday I set up the web server and started the boilerplate for our app. Today I will look at dynamoDB, hoping to talk to Thomas about this.
+
+
+thomaslv [9:05 AM] 
+Standup: yesterday I set up mongodb in the repo. However I did not see Josh's post about aws not supporting mongo until it was too late. Today I will look at dynamo.
+
+
+joshuajcamacho [9:06 AM] 
+Cool @thomaslv do have time in the evening to chat real quickity ? Maybe at 6:30-7?
+
+
+ben [9:06 AM] 
+Yesterday Nathan  and I got familiar with html and java script. Those seemed like an easier first steps. I'll start looking at node and express tutorials today
+
+
+[9:06] 
+We also started the requirements doc
+
+
+divya1224 [9:06 AM] 
+I checked few free APIs which has more than 1000 recipes.. We can probably use them. I put them out in the google drive. I'll keep looking for more. Also I will start exploring more on express and node tutorials
+
+
+ben [9:08 AM] 
+Nathan is having a bit of trouble with Slack right now. I'll try to help him out
+
+
+[9:09] 
+The standup channel is not showing up for him
+
+
+joshuajcamacho [9:09 AM] 
+He has to join it
+
+
+nathan [9:09 AM] 
+joined #standup
+
+
+nathan [9:09 AM] 
+ok, got it
+
+
+[9:10] 
+i need the potential resources as well.
+
+
+joshuajcamacho [9:10 AM] 
+#potential_resources
+
+
+thomaslv [9:11 AM] 
+@joshuajcamacho I can meet at 6:30-7.
+
+
+joshuajcamacho [9:11 AM] 
+Cool
+
+
+nathan [9:12 AM] 
+Ben and I can meet then too.
+
+
+[9:14] 
+Did the teacher say he was going to post the weekly assignments on blackboard? Nothing's up yet
+
+
+
+nathan [9:16 AM] 
+I hope those assignments just require Java and not all this web stuff.
+
+
+[9:18] 
+btw my status is the same as Ben's.
+
+
+ben [9:18 AM] 
+We will see. I'm a little concerned about my ability to contribute to the projects. Got to do more tutorials.
+
+
+joshuajcamacho [9:20 AM] 
+It will get easier, especially after I make some pages that you can use as examples
+
+
+ben [9:21 AM] 
+Examples will be excellent. Thanks for the reassurance.
+
+
+[9:25] 
+so is the standup done now?
+
+
+joshuajcamacho [9:27 AM] 
+Yep all done. Thanks everyone
+
+----------------------------------------------------------------------------------------
+8/3
+Present: Everyone
+LOG
+
+joshuajcamacho [10:00 AM] 
+Ok @channel standup time
+
+
+[10:02] 
+Yesterday I setup aws for Thomas so he could start with the database. I also began planning for the design document. Today I will look over the requirements document for Ben and Nathan and will start the design document
+
+
+nathan [10:03 AM] 
+Yesterday, I started looking at a tutorial for Materialize CSS. I wan't able to get much else done because I had another class. Today, I will continue the CSS Tutorial and the requirements document.
+
+
+ben [10:04 AM] 
+Yesterday I downloaded some tools so I can start learning node.js. I ran into some problems. Not sure if they are all solved yet. Today I plan on continuing tutorials and working on the requirements document with Josh's advice.
+
+
+divya1224 [10:05 AM] 
+Yesterday: Worked on fetching more recipes. Found few more APIs . Could not find any API that directly matches our requirement. We might have to further filter them in our application after fetching it .Today : I'll continue to look for more APIs. Also exploring options to download readily available downloadable data
+
+
+thomaslv [10:07 AM] 
+Yesterday I discussed some database/aws compatibility/ease-of-use options with Josh, we ultimately decided on dynamoDB, so I looked into some tutorials and set up a recipe table. Today I'll explore more dynamoDB documentation.
+
+
+divya1224 [10:10 AM] 
+Also, when I was exploring I found that Heroku Database has more options than
+
+
+[10:10] 
+Dynamo DB
+
+
+thomaslv [10:10 AM] 
+@divya1224 make sure to put the APIs you find into the potential-resources file. As of right now the data requirements we need are just ingredients, recipe name, recipe and the style of food(ie: Chinese, Italian, etc.) preferably in JSON format as thatd be the most easy to populate the database. Once we discuss a few more requirements with Rodriguez at the next meeting we can begin populating the database. The problem with prepopulating a database is if we decide we need anything more than what the model allows, it can be tricky to add.
+
+
+ben [10:11 AM] 
+Josh, can you upload the notes you took on Tuesday when we meet with the professor?
+
+
+divya1224 [10:11 AM] 
+sure @thomaslv
+
+
+thomaslv [10:11 AM] 
+Ill look into Heroku, but we're using dynamo because it's amazons and we'll be hosting the page with amazon, so it all kinda slides together nicely.
+
+
+[10:12] 
+*we chose dynamo* Im not opposed to using Heroku if it is better for us
+
+
+divya1224 [10:12 AM] 
+even heroku is through amazon.. it has many free options..
+
+
+thomaslv [10:12 AM] 
+that wasnt supposed to bold, that was supposed to be a correction haha
+
+
+joshuajcamacho [10:12 AM] 
+@ben yes
+
+
+divya1224 [10:13 AM] 
+sure.. just in case if you encounter any issues with Dynamo
+
+
+joshuajcamacho [10:13 AM] 
+@divya1224 @thomaslv it would be ideal if we also had pictures of the recipes. This is super important for the design of the app
+
+
+thomaslv [10:13 AM] 
+Oh yeah, makes sense.
+
+
+divya1224 [10:15 AM] 
+the main challenge im facing is .. i cant find any API that returns only recipes with the just the ingredients that we request .. it also includes other ingredients apart from the ones we request for..
+
+
+[10:16] 
+my question .. can we further filter the additional ingredients in our application
+
+
+ben [10:17 AM] 
+How are the recipes formated? JSON? Text?
+
+
+divya1224 [10:18 AM] 
+most of them are JSON
+
+
+joshuajcamacho [10:19 AM] 
+@ben @nathan the notes are on the google drive. If you have any questions about them (they're a little sloppy) just shoot me a message
+
+
+ben [10:20 AM] 
+@joshuajcamacho cool, thanks
+
+
+thomaslv [10:20 AM] 
+This definitely wouldnt scale, so its not good practice but... I was thinking the way we would do it was prepopulate our database with 1000 recipes. Then we search our own database for recipes that only contain the ingredients we have. Eventually if it mattered we could hash ingredients to recipes but for now I think we can just linear search for now. Although josh could probably provide more insight.
+
+
+joshuajcamacho [10:21 AM] 
+exactly thomaslv
+
+
+[10:22] 
+@divya1224 we just need the raw data. Recipes (which includes the steps to make the recipes) + ingredients + photos of said recipes
+
+
+[10:22] 
+There might be an API out there that suits our needs, or we might have to web scrape if push comes to shove
+
+
+divya1224 [10:23 AM] 
+sure.. sounds good.. i'll explore options on raw data
+
+
+joshuajcamacho [10:24 AM] 
+ty @channel standup is now over but feel free to keep the conversations flowing between eachother (edited)
+
+
+divya1224 [10:26 AM] 
+just a thought .. do we need to discuss on finalizing the requirements before we freeze it and move over to design phase?
+
+
+joshuajcamacho [10:27 AM] 
+some things can be done in parallel. There will always be a "landing page" for example. But yeah typically you finalize the requirements before starting the design
+
+
+[10:28] 
+Thats part of why I'm going over the requirements document today
+
+
+[10:28] 
+maybe tomorrow we can all look over the requirements document and sign off on it
+
+
+divya1224 [10:29 AM] 
+sure.. Thanks @joshuajcamacho
+
+
+joshuajcamacho [10:29 AM] 
+thank you @divya1224 good that you brought that up
+
+
