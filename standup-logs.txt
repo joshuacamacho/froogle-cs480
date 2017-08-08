@@ -279,4 +279,185 @@ sure.. Thanks @joshuajcamacho
 joshuajcamacho [10:29 AM] 
 thank you @divya1224 good that you brought that up
 
+-------------------------------------------------------------------------------------------------------------------------
+
+8/4
+Present: Everyone
+LOG
+
+ben [9:07 AM] 
+Yesterday, I worked on the requirements doc with Nathan and started learning Node.js. Today I plan on reviewing the requirements doc with the team and continuing the tutorials.
+
+
+joshuajcamacho [9:08 AM] 
+Yesterday I read through the requirements document and added a tiny bit. He did say 3-5 pages right ? We're sitting at 3.1 pages so it might be solid enough. Today I will make sure everyone signs off on the requirements document and make progress on the design document
+
+
+thomaslv [9:08 AM] 
+Standup: yesterday i checked out some more dynamodb docs along with heroku. Although Im not sure if I was looking at the wrong thing but Heroku is a service similar to aws. https://stackoverflow.com/questions/9802259/why-do-people-use-heroku-when-aws-is-present-what-distinguishes-heroku-from-aws
+stackoverflow.com
+Why do people use Heroku when AWS is present? What distinguishes Heroku from AWS?
+I'm a beginner RoR programmer who's planning to deploy my app using Heroku. Word from my other advisor friends says that Heroku is really easy, good to use. The only problem is that I still have no...
+ 
+
+
+nathan [9:09 AM] 
+Yesterday, I worked on the requirements doc with Ben and did more tutorials on Materialize CSS. Today I plan to finalize the requirements doc and start learing Node js.
+
+
+divya1224 [9:09 AM] 
+Yesterday : I started training on express and nodes . Also, yummly looks like a good API. Its a paid API
+
+
+[9:09] 
+I got a free version of it for 1 month
+
+
+joshuajcamacho [9:10 AM] 
+Nice @divya1224 I'll check it out today
+
+
+divya1224 [9:11 AM] 
+@thomaslv Even in my research, I saw that they are many free services that can be used with Heroku..It looks like a good for academic projects..
+
+
+thomaslv [9:11 AM] 
+Today I plan on reviewing the requirements doc and doing a little bit of research on what might be needed to implement the finalized requirements.
+
+
+divya1224 [9:12 AM] 
+Today : I'll revisit the APIs or database approach after our requirement session
+
+
+ben [9:13 AM] 
+Can everyone review the requirements doc after the standup?
+
+
+divya1224 [9:13 AM] 
+sure.. Is it ready for review?
+
+
+ben [9:14 AM] 
+yes
+
+
+divya1224 [9:15 AM] 
+cool.. I can check it after the standup
+
+
+ben [9:19 AM] 
+Ok. Everyone. If you're sure about something, go ahead and change it. Otherwise leave a comment or post on Slack. Try to think of things to make it a little longer
+
+
+thomaslv [9:33 AM] 
+The requirements doc looks good to me.
+
+
+divya1224 [9:58 AM] 
+The requirement looks good to me too.. Good work Ben and Nathan .. I want to make slight changes ( more cosmetic types) . I'll add my changes in different font so that it can be tracked easily
+
+
+nathan [10:02 AM] 
+ok
+
+-----------------------------------------------------------------------------------------------
+
+8/7
+Present: Everyone
+LOG
+
+divya1224 [9:03 AM] 
+#standup time?
+
+
+ben [9:03 AM] 
+This weekend, I studied Node js, started learning about JSON, and reviewed the design document. I have a test today, but, I will try to sqeeze in a couple javascript tutorials tonight.
+
+
+nathan [9:05 AM] 
+This weekend, I studied Node js ans started learning jquery. I'll try to practice jquery more tonight
+
+
+divya1224 [9:07 AM] 
+This weekend : Checked the design document , started learning Express and Node.. Today: will continue on the training and will also continue to work with the team on design..
+
+
+[9:08] 
+@joshuajcamacho or @thomaslv can you check if yummly API fits in our design .. Otherwise I can check on database options
+
+
+joshuajcamacho [9:09 AM] 
+Opps sorry I was in a meeting at work. Ty for starting
+
+
+ben [9:09 AM] 
+I can print out the requirements doc for tomorrow. We also need to put it on Github right?
+
+
+joshuajcamacho [9:09 AM] 
+This weekend I made progress on the design document. Today (tonight) I will finish the design document
+
+
+[9:10] 
+@ben you could put it up there if you want
+
+
+[9:11] 
+@divya1224 I'll check it out today
+
+
+divya1224 [9:11 AM] 
+@joshuajcamacho Thank you
+
+
+nathan [9:12 AM] 
+have we been keeping up with our logs in GitHub? the last update was 4 days ago
+
+
+ben [9:12 AM] 
+@joshuajcamacho ok. I can do that too
+
+
+joshuajcamacho [9:13 AM] 
+@nathan I forgot Fridays but I'll add Friday and todays log to the git
+
+
+ben [9:13 AM] 
+So the professor still hasn't posted the first small assignment?
+
+
+joshuajcamacho [9:17 AM] 
+Not from what I can see
+
+
+[9:17] 
+I'm concerned for him
+
+
+[9:17] 
+Hope he's okay
+
+
+divya1224 [9:18 AM] 
+yeah
+
+
+divya1224 [9:27 AM] 
+I just sent a meeting invite for the standup.. read somewhere that is a good practise to have it on the calendar.. I know we are diligent and dont require one.. Sent it as a good software engineering practise
+
+
+joshuajcamacho [9:28 AM] 
+Awesome, thank you Divya.
+
+
+ben [9:30 AM] 
+accepted :smiley:
+
+
+thomaslv [10:23 AM] 
+Hey everyone, I apologize for missing the standup this morning, fell back asleep... This weekend I messed around with dynamo a bit more and looked over some node docs. Today Ill check out the yummly api and Ill let you all know if I find any other APIs as well. I checked out the design doc as well, really nice work Josh!
+
+
+
+
 
