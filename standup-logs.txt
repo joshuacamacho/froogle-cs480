@@ -458,6 +458,53 @@ thomaslv [10:23 AM]
 Hey everyone, I apologize for missing the standup this morning, fell back asleep... This weekend I messed around with dynamo a bit more and looked over some node docs. Today Ill check out the yummly api and Ill let you all know if I find any other APIs as well. I checked out the design doc as well, really nice work Josh!
 
 
+-------------------------------------------------------------------------------------------------
+
+8/8
+Present: Everyone
+
+LOG
+
+thomaslv [10:21 AM] 
+Today: I will be designing the data models for the database. Ill try to start readying up the database for population as well.
 
 
+joshuajcamacho [10:22 AM] 
+Yesterday I finished the design document (minus DB design). Today I will finish the pantry, setup libraries for front end development
 
+
+ben [10:24 AM] 
+Yesterday I looked into json files. Today I will  continue learning HTML and materialize css and focus on how to make handle bars.
+
+
+divya1224 [10:27 AM] 
+Learning express and node. Today I will continue learning materialize CSS , handle bars
+
+
+nathan [10:29 AM] 
+Yesterday, I continued learning jQuery. Today, I will focus on learning Materialize CSS and handlebars so I can start with making the landing page with Josh's help on Thursday
+
+---------------------------------------------------------------------------------------------------
+
+8/9
+Present: Everyone
+LOG
+
+ben [9:05 AM] 
+Yesterday, I looked at more html tutorials (including divs). I also got a side menu to show up in an example project. Today, I will work on the top bar.
+
+
+nathan [9:05 AM] 
+Yesterday, I installed and learned the basics of handlebars and started working on the landing page. Today, I will continue working on the landing page.
+
+
+joshuajcamacho [9:06 AM] 
+Yesterday I gave a short into to making a new page in node. Today I will finish up the pantry page
+
+
+divya1224 [9:07 AM] 
+Yesterday: Learning HTML, materialise.css and handle bar to help with development on register functionality. Today: will continue with the tutorials and will explore on register model
+
+
+thomaslv [9:14 AM] 
+Yesterday: mocked up the data models on the design doc. Today I will try to begin implementing the database
