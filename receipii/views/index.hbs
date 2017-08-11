@@ -1,2 +1,54 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<style>
+	.picturetext {
+		margin-top: 0;
+    	width: 80%;
+    	position: absolute;
+    	top: 225px;
+    	left: 70px;
+	}
+
+	.belowpicturetext {
+		margin-top: 0;
+    	width: 100%;
+    	vertical-align: text-center;
+    	color: white;
+	}
+
+
+	
+
+</style>
+
+
+    
+    
+
+<!--picture-->
+<div class="row" style="font-size:0; text-align: center;">
+      
+    <img id="image" src="img/feast2.jpg" class="responsive-img">
+	<h1 id="text_above_picture" class="picturetext" style="background: rgba(255, 255, 255, 0.8); margin-top: 0; ">Enter Ingredients, We'll find the recipes</h1>
+    <!--slogan-->
+	<div  style="height:10vh;background: rgb(128, 0, 0); display:flex; align-items: center; justify-content: center; text-align: center">
+	    <h1 class="belowpicturetext">Find meals hiding at home</h1>
+	</div>
+</div>
+
+
+
+
+
+<!-- input ingredients-->
+<div style="height:10vh; align-items: center; text-align: center">
+<input placeholder="Enter ingredients" id="ingredients_input" type="text" class="validate"
+style="margin 0; vertical-align: center; width:60%; height:50%; background: rgb(250, 250, 250);">
+</div>
+
+
+<!-- register button and other text-->
+<div style="height:13vh; margin 0; align-items: center;  text-align: center;">
+    <h2 class="activitytext" id="instructions" >Save favorites, submit your own and more!</h2>
+	<a class="waves-effect waves-light green btn" style="width:60%; height:50%;"><h2>Register</h2></a>
+    <br>
+    <h3 id="member_text">Already a member? <a href="http://www.google.com">Click here to log in</a></h3>
+</div>
