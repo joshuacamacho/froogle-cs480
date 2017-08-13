@@ -9,8 +9,13 @@
 
 
       <ul id="slide-out" class="side-nav">
-        <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+      {{#if user}}
+          <li><a href="/pantry"><i class="material-icons">person_pin</i>Pantry</a></li>
+          <li><a href="/logout"><i class="material-icons">person_pin</i>Logout</a></li>
+      {{else}}
         <li><a href="#!"><i class="material-icons">person_pin</i>Login</a></li>
+      {{/if}}
       </ul>
 
     <div class="navbar-fixed">

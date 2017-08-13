@@ -18,7 +18,8 @@ function checkAuth(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    if(req.user) res.locals.user = req.user.Item;
+    res.render('index', { title: 'Recipii Home' });
 });
 
 router.post('/users', function(req, res, next) {
@@ -63,6 +64,7 @@ router.post('/users', function(req, res, next) {
 });
 
 router.get('/pantry',  checkAuth, function(req, res, next) {
+    res.locals.user = req.user.Item;
     res.render('pantry', { title: 'My Pantry' });
 });
 
