@@ -7,6 +7,8 @@ AWS.config.update({region:'us-east-1'});
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });

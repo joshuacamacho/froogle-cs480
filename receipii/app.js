@@ -12,6 +12,7 @@ var db = monk('localhost:27017/receipii');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var passport = require('./passport-config');
 
 var app = express();
 
@@ -29,6 +30,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Make Database Accessible
 app.use(function(req,res,next){
