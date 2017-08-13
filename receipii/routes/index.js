@@ -8,7 +8,13 @@ AWS.config.update({region:'us-east-1'});
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-
+function checkAuth(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        return res.send(401);
+    }
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,7 +22,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/users', function(req, res, next) {
-  var email = req.body['email'];
+  var email = req.body['username'];
   var password = req.body['password'];
   
   if(!email || !password){
@@ -32,22 +38,37 @@ router.post('/users', function(req, res, next) {
         "Email": email,
         "password": password
     }
-};
-
+  };
+  var user={};
+  user.Item={
+      Email: email,
+      password: password
+  };
   console.log("Adding a new item...");
 	docClient.put(params, function(err, data) {
 	    if (err) {
 	        console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
 	    } else {
-	        console.log("Added item:", JSON.stringify(data, null, 2));
+	        console.log("Added item:", JSON.stringify(data));
+            req.login(user, function (err) {
+                if (!err) {
+                    res.redirect('/pantry');
+                } else {
+                    //handle error
+                }
+            });
 	    }
 	});
 
 });
 
+router.get('/pantry',  checkAuth, function(req, res, next) {
+    res.render('pantry', { title: 'My Pantry' });
+});
+
 router.post('/login',
-    passport.authenticate('local', { successRedirect: '/',
-        failureRedirect: '/login',
+    passport.authenticate('local', { successRedirect: '/pantry',
+        failureRedirect: '/',
         failureFlash: true })
 );
 
