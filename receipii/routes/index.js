@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var AWS = require('aws-sdk');
 var sha256 = require('sha256');
+var passport = require('../passport-config');
 
 AWS.config.update({region:'us-east-1'});
 
@@ -43,6 +44,12 @@ router.post('/users', function(req, res, next) {
 	});
 
 });
+
+router.post('/login',
+    passport.authenticate('local', { successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true })
+);
 
 module.exports = router;
     
