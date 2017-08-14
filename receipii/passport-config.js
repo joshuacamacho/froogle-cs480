@@ -51,9 +51,7 @@ passport.use(new LocalStrategy(
                 } else {
                     //return the response from callback when the login is invalid
                     console.log("Incorrect auth");
-                    return done(null, false, {
-                        message: 'Login Invalid'
-                    })
+                    return done(null, false);
                 }
             }
         });
