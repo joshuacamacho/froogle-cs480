@@ -74,6 +74,12 @@ router.post('/login',
         failureFlash: true })
 );
 
+router.get('/logout', function(req, res){
+    res.locals.users = null;
+    req.logout();
+    res.redirect('/');
+});
+
 module.exports = router;
     
 

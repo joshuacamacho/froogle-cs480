@@ -59,21 +59,9 @@ style="margin 0; vertical-align: center; width:60%; height:50%; background: rgb(
 <div style="height:13vh; margin 0; align-items: center;  text-align: center;">
     <p class="flow-text activitytext" id="instructions" >Save favorites, submit your own and more!</p>
 	{{> register}}
-    <p class="flow-text" id="member_text">Already a member? <a href="http://www.google.com">Click here to log in</a></p>
+    <p class="flow-text" id="member_text">Already a member? <a class="modal-trigger" href="#login">Click here to log in</a></p>
 </div>
 
+{{> login}}
 
-<form action="/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
 {{/if}}
