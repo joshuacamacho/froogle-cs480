@@ -1,0 +1,29 @@
+<!-- Modal Structure -->
+<div id="login" class="modal">
+    <div class="modal-content">
+        <h4>Login</h4>
+
+        <form action="/login" method="post">
+            <div>
+                <label>Email:</label>
+                <input type="text" name="username"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password"/>
+            </div>
+            <div>
+                <button type="submit"  class="btn-block btn btn-lg btn-primary">Log In</button>
+            </div>
+        </form>
+
+
+    </div>
+    <!--<div class="modal-footer">-->
+        <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>-->
+    <!--</div>-->
+</div>
+
+<script>
+    $(".modal").modal();
+</script>
