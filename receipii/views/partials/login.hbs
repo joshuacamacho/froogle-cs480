@@ -6,14 +6,14 @@
         <form action="/login" method="post">
             <div>
                 <label>Email:</label>
-                <input type="text" name="username"/>
+                <input id="email" type="text" name="username"/>
             </div>
             <div>
                 <label>Password:</label>
                 <input type="password" name="password"/>
             </div>
             <div>
-                <button type="submit"  class="btn-block btn btn-lg btn-primary">Log In</button>
+                <button type="submit"  class="disabled btn-block btn btn-lg btn-primary">Log In</button>
             </div>
         </form>
 
@@ -26,4 +26,10 @@
 
 <script>
     $(".modal").modal();
+    var emailGood=false;
+    var passwordkGood=false;
+    $('#email').on('change',function(){
+       if($(this).value!='') emailGood =true;
+//       if(emailGood && passwordGood) 
+    });
 </script>
