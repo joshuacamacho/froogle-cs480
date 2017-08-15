@@ -7,3 +7,7 @@ https://docs.google.com/document/d/16-Y3WVvRBmOkyV8FcdJ4HWmNXlAJHa7NDCq25q2o_iA/
 Link to design document
 
 https://docs.google.com/document/d/1AYikGmiTGGY7nTr5uTe-a3J5NOgzl3GteDzqjr6uhEk/edit?usp=sharing
+
+Link to Project Report
+
+https://docs.google.com/document/d/17Uewe30wIcMmRKz8theEg9dVrYfhwCbdZuH7j6Aztfs/edit?usp=sharing
