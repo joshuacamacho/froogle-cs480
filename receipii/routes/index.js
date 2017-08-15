@@ -96,8 +96,7 @@ router.post('/submit', checkAuth, function(req, res, next) {
 
 router.post('/login',
     passport.authenticate('local', { successRedirect: '/pantry',
-        failureRedirect: '/',
-        failureFlash: true })
+        failureRedirect: '/'})
 );
 
 router.get('/logout', function(req, res){
