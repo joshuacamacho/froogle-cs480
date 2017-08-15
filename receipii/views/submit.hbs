@@ -1,0 +1,109 @@
+<div class="container">
+
+<div class="row">
+    <div class="input-field col s8">
+        <input placeholder="Enter a name for your recipe" id="name" type="text" class="validate">
+        <label for="name">Recipe Name</label>
+    </div>
+</div>
+
+    <div class="row">
+        <ul class="collapsible ingredients" data-collapsible="expandable">
+            <li class="ingredient newIngredient">
+                <div class="collapsible-header"><i class="material-icons">add</i>Add an ingredient</div>
+                <div class="collapsible-body">
+                    <div class="input-field">
+                        <input placeholder="Enter the name of the ingredient" id="inputingredient" type="text" class="validate">
+                        <label for="first_name">Enter ingredient</label>
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="Enter how much ingredient the recipe needs" id="amount" type="text" class="validate">
+                        <label for="first_name">Enter amount</label>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+    <ul class="collapsible steps" data-collapsible="expandable">
+        <li class="step new">
+            <div class="collapsible-header"><i class="material-icons">add</i>Add a step</div>
+            <div class="collapsible-body">
+                <div class="input-field">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Textarea</label>
+                </div>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <div class="row">
+        <button class="btn waves-effect waves-light" id="submit">Submit Recipe</button>
+    </div>
+
+</div>
+
+
+
+<script>
+    var recipe={};
+    var stepCount=1;
+    var ingredientCount=1;
+    function handleNewIngredient(){
+        console.log($(this));
+        var copy = $(this).clone();
+        $(this).children()[0].innerHTML="Ingredient "+ingredientCount;
+        ingredientCount++;
+        $(this).removeClass('newIngredient');
+        $(this).off('click',handleNewIngredient);
+        copy.appendTo('.ingredients');
+        $('.newIngredient').on('click',handleNewIngredient);
+    }
+    $('.newIngredient').on('click',handleNewIngredient);
+    function handleNew(){
+        console.log($(this));
+        var copy = $(this).clone();
+        $(this).children()[0].innerHTML="Step "+stepCount;
+        stepCount++;
+        $(this).removeClass('new');
+        $(this).off('click',handleNew);
+        copy.appendTo('.steps');
+        $('.new').on('click',handleNew);
+    }
+    $('.new').on('click',handleNew);
+
+    $('#submit').on('click',function(){
+        recipe.Recipe = $('#name').val();
+        recipe.steps = [];
+        recipe.ingredients = [];
+        $('.step').each(function(){
+            if($(this).find('textarea')[0].value!=""){
+                recipe.steps.push($(this).find('textarea')[0].value);
+            }
+        });
+
+        $('.ingredient').each(function(){
+            if($(this).find('#inputingredient')[0].value!=""){
+                var temp = {
+                  name:$(this).find('#inputingredient')[0].value,
+                  amount:$(this).find('#amount')[0].value
+                };
+                recipe.ingredients.push(temp);
+            }
+        });
+        console.log(recipe);
+
+        $.ajax({
+            url: '/submit',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(recipe),
+            dataType: 'json'
+        }).done(function(){
+            alert('Your recipe is submitted');
+        });
+
+    });
+
+</script>

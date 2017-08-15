@@ -68,6 +68,32 @@ router.get('/pantry',  checkAuth, function(req, res, next) {
     res.render('pantry', { title: 'My Pantry' });
 });
 
+router.get('/submit', checkAuth, function(req, res, next) {
+    res.locals.user = req.user.Item;
+    res.render('submit', { title: 'Recipe Submit' });
+});
+
+router.post('/submit', checkAuth, function(req, res, next) {
+    res.locals.user = req.user.Item;
+    var recipe = req.body;
+    recipe.user = res.locals.user;
+    var params = {
+        TableName: "Recipes",
+        Item: recipe
+    };
+    docClient.put(params, function(err, data) {
+        if (err) {
+            console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("Added item:", JSON.stringify(data));
+
+            // res.redirect('/pantry');
+
+        }
+    });
+    res.json({});
+});
+
 router.post('/login',
     passport.authenticate('local', { successRedirect: '/pantry',
         failureRedirect: '/',
