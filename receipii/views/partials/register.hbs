@@ -38,7 +38,7 @@
                         <!--<div class="divider-form"></div> -->
            <p class="text-center">You agree to the <strong>Terms & Conditions</strong>.</p>
 
-          <button type="submit" class="btn-block btn btn-lg btn-primary">Register Account</button>
+          <button type="submit" id="submit" class="btn-block btn btn-lg btn-primary">Register Account</button>
 
           
     </div>
@@ -53,20 +53,45 @@
 
       
 
-  <script type="text/javascript">
+<script type="text/javascript">
+
+
   $(".modal").modal();
+$(function(){
+  //$('#submit').attr('disabled',true);
+  var emailIsValid = false;
+  var infoValid = false;
+
+  $("input[id$='email']").change(function(){
+    var current=$(this).val();
+    emailIsValid=validateEmail(current);
+    if(emailIsValid){
+      $('#submit').attr('disabled',false);
+    };
+  });
+
   $("#password").on("change", function (e) {
     if ($(this).val() != $("#confirmpassword").val()) {
         $("#confirmpassword").removeClass("valid").addClass("invalid");
     } else {
         $("#confirmpassword").removeClass("invalid").addClass("valid");
     }
-});
-$("#confirmpassword").on("change", function (e) {
+  });
+  $("#confirmpassword").on("change", function (e) {
     if ($("#password").val() != $(this).val()) {
         $(this).removeClass("valid").addClass("invalid");
     } else {
         $(this).removeClass("invalid").addClass("valid");
     }
+  });
+
+  function validateEmail(current){
+    var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if(emailRegex.test(current)){
+      return true;
+    }
+    return false;
+  };
+
 });
-  </script>
+</script>
