@@ -10,10 +10,10 @@
             </div>
             <div>
                 <label>Password:</label>
-                <input type="password" name="password"/>
+                <input type="password" id="password" name="password"/>
             </div>
             <div>
-                <button type="submit"  class="disabled btn-block btn btn-lg btn-primary">Log In</button>
+                <button type="submit" id="submit" class="disabled btn-block btn btn-lg btn-primary">Log In</button>
             </div>
         </form>
 
@@ -26,10 +26,50 @@
 
 <script>
     $(".modal").modal();
-    var emailGood=false;
-    var passwordkGood=false;
-    $('#email').on('change',function(){
-       if($(this).value!='') emailGood =true;
-//       if(emailGood && passwordGood) 
+    $(function(){
+        var emailIsValid=false;
+        var passIsValid=false;
+
+        $('#submit').addClass('disabled');
+        //Validate email on keyup and set emailIsValid accordingly
+        $("input[id$='email']").keyup(function(){
+            var current=$(this).val();
+            emailIsValid=validateEmail(current);
+            checkSubmit();
+        });
+
+        //Validate Password on Keyup and set passIsValid accordingly
+        $("input[id$='password']").keyup(function(){
+            var current=$(this).val();
+            passIsValid=validatePassword(current);
+            checkSubmit();
+        });
+
+        //Check email against regex
+        function validateEmail(current){
+            var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            if(emailRegex.test(current)){
+                return true;
+            }
+            return false;
+        };
+
+        //Check Password
+        function validatePassword(current){
+            var passwordRegex = /[0-9a-zA-Z]{1,}/;
+            if(passwordRegex.test(current)){
+                return true;
+            }
+            return false;
+        }
+
+        function checkSubmit(){
+            if(emailIsValid && passIsValid){
+                 $('#submit').removeClass('disabled');
+            } else {
+                 $('#submit').addClass('disabled');
+            }
+        };
+
     });
 </script>
