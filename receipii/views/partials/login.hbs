@@ -32,14 +32,14 @@
 
         $('#submit').addClass('disabled');
         //Validate email on keyup and set emailIsValid accordingly
-        $("input[id$='email']").keyup(function(){
+        $("input[id$='email']").change(function(){
             var current=$(this).val();
             emailIsValid=validateEmail(current);
             checkSubmit();
         });
 
         //Validate Password on Keyup and set passIsValid accordingly
-        $("input[id$='password']").keyup(function(){
+        $("input[id$='password']").change(function(){
             var current=$(this).val();
             passIsValid=validatePassword(current);
             checkSubmit();
