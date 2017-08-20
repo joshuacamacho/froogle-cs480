@@ -41,7 +41,7 @@ def individualRecipeScrape(link):
 				print "steps: " + item.getText().lstrip()
 				steps.append(item.getText().lstrip())
 
-		counter = counter + 1
+		counter += 1
 
 	#Enter items in database here:
 	#steps and ingredients are lists containing their respective items
@@ -61,4 +61,4 @@ linkCount = 0
 for item in page_soup.find_all('a'):
 	if linkCount > 5:
 		individualRecipeScrape(item.get('href')) 
-	linkCount = linkCount + 1
+	linkCount += 1
