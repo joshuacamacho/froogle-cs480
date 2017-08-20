@@ -13,6 +13,7 @@
 import bs4
 import urllib2
 from bs4 import BeautifulSoup as soup
+from urllib2 import HTTPError
 
 def individualRecipeScrape(link):
 	#get recipe link url
@@ -22,8 +23,8 @@ def individualRecipeScrape(link):
 	recipe_html = urllib2.urlopen(req).read()
 	#parse page to html and store in page_soup
 	recipe_soup = soup(recipe_html, "html.parser")
-	lists = recipe_soup.find_all('p')
-	print lists
+	print recipe_soup.find_all('p')
+
 
 #sidechef url
 page = 'https://www.sidechef.com/search/query/?q=Beginner&start=12&rows=100'
@@ -33,6 +34,9 @@ req = urllib2.Request(page, None, headers)
 page_html = urllib2.urlopen(req).read()
 #parse page to html and store in page_soup
 page_soup = soup(page_html, "html.parser")
+linkCount = 0
 for item in page_soup.find_all('a'):
-	individualRecipeScrape(item.get('href'))
-
+	if linkCount > 5:
+		print item.get('href')
+		individualRecipeScrape(item.get('href')) 
+	linkCount = linkCount + 1
