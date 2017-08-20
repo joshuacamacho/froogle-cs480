@@ -42,20 +42,33 @@ def individualRecipeScrape(link):
 				steps.append(item.getText().lstrip())
 
 		counter += 1
+	ratingList = recipe_soup.find_all('div', {"class":"w_star"})
+	div = recipe_soup.find('div', {"class":"w_star"})
+	star_rating = 0
+	for i in div.contents:
+		stringLength = len(str(i.encode('utf-8')))
+		if (stringLength > 1):
+			star_rating += 1
+	print "star rating: " + str(star_rating)
 
-	#Enter items in database here:
+	authorDiv = recipe_soup.find('div', {"class":"t_c w_introduce"})
+	headertag = authorDiv.find('h4')
+	headerList = headertag.getText().split('http')
+	author = str(headerList[0].encode('utf-8'))
+	print "author: " + author 
+	print "---------------------------------------------------" 
+
 	#steps and ingredients are lists containing their respective items
 	#recipeName is the name of recipe
-
+	#star rating stored in star_rating (not all recipes have ratings)
+	#author stored in author
 
 
 #sidechef url
 
 #change start to number higher than the previous rows upon crash
-start = 12
-rows = start + 100
 
-page = 'https://www.sidechef.com/search/query/?q=Beginner&start=' + start + '&rows=' + rows
+page = 'https://www.sidechef.com/search/query/?q=Beginner&start=12&rows=100'
 #open page with firefox
 headers = { 'User-Agent' : 'Mozilla/5.0' }
 req = urllib2.Request(page, None, headers)
