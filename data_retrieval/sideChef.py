@@ -16,6 +16,8 @@ from bs4 import BeautifulSoup as soup
 from urllib2 import HTTPError
 
 def individualRecipeScrape(link):
+	steps = []
+	ingredients = []
 	#get recipe link url
 	recipeUrl = 'https://www.sidechef.com' + link
 	headers = { 'User-Agent' : 'Mozilla/5.0' }
@@ -23,7 +25,28 @@ def individualRecipeScrape(link):
 	recipe_html = urllib2.urlopen(req).read()
 	#parse page to html and store in page_soup
 	recipe_soup = soup(recipe_html, "html.parser")
-	print recipe_soup.find_all('p')
+	pList = recipe_soup.find_all('p')
+	counter = 0
+	endIngredients = False 
+	for item in pList[:-4]:
+		#Title is at first p
+		if counter == 0:
+			recipeName = item.getText()
+			print "recipe name: " + recipeName
+		if counter > 2:
+			if item.getText()[0].isdigit():
+				print "ingredients: " + item.getText()
+				ingredients.append(item.getText())
+			else: 
+				print "steps: " + item.getText().lstrip()
+				steps.append(item.getText().lstrip())
+
+		counter = counter + 1
+
+	#Enter items in database here:
+	#steps and ingredients are lists containing their respective items
+	#recipeName is the name of recipe
+
 
 
 #sidechef url
@@ -37,6 +60,5 @@ page_soup = soup(page_html, "html.parser")
 linkCount = 0
 for item in page_soup.find_all('a'):
 	if linkCount > 5:
-		print item.get('href')
 		individualRecipeScrape(item.get('href')) 
 	linkCount = linkCount + 1
