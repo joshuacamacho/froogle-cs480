@@ -50,7 +50,12 @@ def individualRecipeScrape(link):
 
 
 #sidechef url
-page = 'https://www.sidechef.com/search/query/?q=Beginner&start=12&rows=100'
+
+#change start to number higher than the previous rows upon crash
+start = 12
+rows = start + 100
+
+page = 'https://www.sidechef.com/search/query/?q=Beginner&start=' + start + '&rows=' + rows
 #open page with firefox
 headers = { 'User-Agent' : 'Mozilla/5.0' }
 req = urllib2.Request(page, None, headers)
