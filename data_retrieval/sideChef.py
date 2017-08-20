@@ -25,6 +25,10 @@ def individualRecipeScrape(link):
 	recipe_html = urllib2.urlopen(req).read()
 	#parse page to html and store in page_soup
 	recipe_soup = soup(recipe_html, "html.parser")
+	photo = recipe_soup.find('picture')
+	print picture.contents
+
+	#steps and ingredients
 	pList = recipe_soup.find_all('p')
 	counter = 0
 	endIngredients = False 
@@ -42,6 +46,8 @@ def individualRecipeScrape(link):
 				steps.append(item.getText().lstrip())
 
 		counter += 1
+
+	#star rating
 	ratingList = recipe_soup.find_all('div', {"class":"w_star"})
 	div = recipe_soup.find('div', {"class":"w_star"})
 	star_rating = 0
@@ -50,7 +56,7 @@ def individualRecipeScrape(link):
 		if (stringLength > 1):
 			star_rating += 1
 	print "star rating: " + str(star_rating)
-
+	#author
 	authorDiv = recipe_soup.find('div', {"class":"t_c w_introduce"})
 	headertag = authorDiv.find('h4')
 	headerList = headertag.getText().split('http')
