@@ -26,18 +26,18 @@ def individualRecipeScrape(link):
 	#parse page to html and store in page_soup
 	recipe_soup = soup(recipe_html, "html.parser")
 	photo = recipe_soup.find('picture').encode('utf-8')
-	photoLink = str(photo).split('\"')[5]
-	print "photo link: " + photoLink
+	photo_link = str(photo).split('\"')[5]
+	print "photo link: " + photo_link
 
 	#steps and ingredients
-	pList = recipe_soup.find_all('p')
+	p_list = recipe_soup.find_all('p')
 	counter = 0
-	endIngredients = False 
-	for item in pList[:-4]:
+	end_ingredients = False 
+	for item in p_list[:-4]:
 		#Title is at first p
 		if counter == 0:
-			recipeName = item.getText()
-			print "recipe name: " + recipeName
+			recipe_name = item.getText()
+			print "recipe name: " + recipe_name
 		if counter > 2:
 			if item.getText()[0].isdigit():
 				print "ingredients: " + item.getText()
@@ -49,19 +49,19 @@ def individualRecipeScrape(link):
 		counter += 1
 
 	#star rating
-	ratingList = recipe_soup.find_all('div', {"class":"w_star"})
+	rating_list = recipe_soup.find_all('div', {"class":"w_star"})
 	div = recipe_soup.find('div', {"class":"w_star"})
 	star_rating = 0
 	for i in div.contents:
-		stringLength = len(str(i.encode('utf-8')))
-		if (stringLength > 1):
+		string_length = len(str(i.encode('utf-8')))
+		if (string_length > 1):
 			star_rating += 1
 	print "star rating: " + str(star_rating)
 	#author
-	authorDiv = recipe_soup.find('div', {"class":"t_c w_introduce"})
-	headertag = authorDiv.find('h4')
-	headerList = headertag.getText().split('http')
-	author = str(headerList[0].encode('utf-8'))
+	author_div = recipe_soup.find('div', {"class":"t_c w_introduce"})
+	header_tag = author_div.find('h4')
+	header_list = header_tag.getText().split('http')
+	author = str(header_list[0].encode('utf-8'))
 	print "author: " + author 
 	print "---------------------------------------------------" 
 
@@ -69,6 +69,7 @@ def individualRecipeScrape(link):
 	#recipeName is the name of recipe
 	#star rating stored in star_rating (not all recipes have ratings)
 	#author stored in author
+	#photo link stored in photo
 
 
 #sidechef url
@@ -82,8 +83,8 @@ req = urllib2.Request(page, None, headers)
 page_html = urllib2.urlopen(req).read()
 #parse page to html and store in page_soup
 page_soup = soup(page_html, "html.parser")
-linkCount = 0
+link_count = 0
 for item in page_soup.find_all('a'):
-	if linkCount > 5:
+	if link_count > 5:
 		individualRecipeScrape(item.get('href')) 
-	linkCount += 1
+	link_count += 1
