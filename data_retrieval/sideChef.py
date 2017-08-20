@@ -25,8 +25,9 @@ def individualRecipeScrape(link):
 	recipe_html = urllib2.urlopen(req).read()
 	#parse page to html and store in page_soup
 	recipe_soup = soup(recipe_html, "html.parser")
-	photo = recipe_soup.find('picture')
-	print picture.contents
+	photo = recipe_soup.find('picture').encode('utf-8')
+	photoLink = str(photo).split('\"')[5]
+	print "photo link: " + photoLink
 
 	#steps and ingredients
 	pList = recipe_soup.find_all('p')
