@@ -63,8 +63,8 @@ router.post('/users', function(req, res, next) {
 
 });
 
-router.get('/pantry',  checkAuth, function(req, res, next) {
-    res.locals.user = req.user.Item;
+router.get('/pantry', function(req, res, next) {
+    // res.locals.user = req.user.Item;
     res.render('pantry', { title: 'My Pantry' });
 });
 
