@@ -6,18 +6,28 @@
 #	5. Retrieve information same way we got the links
 
 
-
-
-
+#####Disclaimer:
+#This is the ugliest/hackiest code Ive ever written. I apologize.
 
 import bs4
+import re
+import time
 import urllib2
 from bs4 import BeautifulSoup as soup
 from urllib2 import HTTPError
+import boto
+from boto.dynamodb2.table import Table
+import json
+from collections import namedtuple
+from collections import defaultdict
+
+
 
 def individualRecipeScrape(link):
 	steps = []
 	ingredients = []
+	ingredient_amounts = []
+	step_photos = []
 	#get recipe link url
 	recipeUrl = 'https://www.sidechef.com' + link
 	headers = { 'User-Agent' : 'Mozilla/5.0' }
@@ -33,23 +43,31 @@ def individualRecipeScrape(link):
 	p_list = recipe_soup.find_all('p')
 	counter = 0
 	end_ingredients = False 
-	for item in p_list[:-4]:
-		#Title is at first p
-		if counter == 0:
-			recipe_name = item.getText()
-			print "recipe name: " + recipe_name
-		if counter > 2:
-			if item.getText()[0].isdigit():
-				print "ingredients: " + item.getText()
-				ingredients.append(item.getText())
-			else: 
-				print "steps: " + item.getText().lstrip()
-				steps.append(item.getText().lstrip())
+	recipe_name = str(p_list[0].getText())
+	print("recipe name: " + recipe_name)
+	#ingredients
 
-		counter += 1
+	ingredient_list = recipe_soup.find('div', {"class":"w_95 w_Ingred"})
+	ingredient_list = ingredient_list.find_all('strong')
+	for strong in ingredient_list:
+		print "ingredients: " + strong.getText()
+		ingredient_amounts.append(strong.getText())
+		print "steps: " + str(strong.next_sibling)
+		ingredients.append(str(strong.next_sibling))
+
+
+	#steps
+	step_list = recipe_soup.find('div', {"class":"w_details"})
+	photo_list = step_list.find_all('img')
+	for photo in photo_list:
+		step_photos.append(str(photo_list).split('\"')[1])
+		print step_photos
+	rec_steps = step_list.find_all('p')
+	for step in rec_steps:
+		steps.append(step.getText().lstrip())
+		print "step: " + step.getText().lstrip()
 
 	#star rating
-	rating_list = recipe_soup.find_all('div', {"class":"w_star"})
 	div = recipe_soup.find('div', {"class":"w_star"})
 	star_rating = 0
 	for i in div.contents:
@@ -66,17 +84,60 @@ def individualRecipeScrape(link):
 	print "---------------------------------------------------" 
 
 	#steps and ingredients are lists containing their respective items
-	#recipeName is the name of recipe
+	#ingredient_amounts[] has ingredient amounts
+	#recipe_name is the name of recipe
 	#star rating stored in star_rating (not all recipes have ratings)
 	#author stored in author
-	#photo link stored in photo
+	#photo link stored in photo_link
+	#step photos stored in "step_photo"
+	#steps = {{text: "", imageurl: ""}, }
+	counter = 0
+	step_dict = []
+	for step in steps:
+		img = ""
+		try:
+			img = step_photos[counter]
+		except IndexError:
+			img = ""
+		step_dict.append({"text" : step.rstrip(), "imageurl": img})
+		counter+=1
+	print step_dict
+
+	counter = 0
+	ingr_dict = []
+	for ingred in ingredients:
+		pls = ingredient_amounts[counter]
+		print pls
+		ingr_dict.append({"name" : str(ingred), "amount": str(pls) })
+		counter+= 1
+	print ingr_dict
+	#database
+	conn = boto.dynamodb.connect_to_region(
+		'us-east-1',
+		aws_access_key_id = '',
+		aws_secret_access_key = ''
+		)
+	my_table = conn.get_table('Recipes')
+	attrs = {
+		'ingredients' : json.dumps(ingr_dict),
+		'steps' : json.dumps(step_dict),
+		'author' : author,
+		'recipe_photo' : photo_link,
+		'rating' : star_rating
+	}
+
+	item = my_table.new_item(
+		hash_key= recipe_name,
+		attrs=attrs
+	)
+	item.put()
+	time.sleep(0.25)
+
 
 
 #sidechef url
 
-#change start to number higher than the previous rows upon crash
-
-page = 'https://www.sidechef.com/search/query/?q=Beginner&start=12&rows=100'
+page = 'https://www.sidechef.com/search/query/?q=Beginner&start=360&rows=100'
 #open page with firefox
 headers = { 'User-Agent' : 'Mozilla/5.0' }
 req = urllib2.Request(page, None, headers)
@@ -87,4 +148,4 @@ link_count = 0
 for item in page_soup.find_all('a'):
 	if link_count > 5:
 		individualRecipeScrape(item.get('href')) 
-	link_count += 1
+	link_count+=1
