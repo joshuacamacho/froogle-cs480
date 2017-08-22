@@ -65,7 +65,25 @@ router.post('/users', function(req, res, next) {
 
 router.get('/pantry', checkAuth, function(req, res, next) {
     res.locals.user = req.user.Item;
-    res.render('pantry', { title: 'My Pantry' });
+    var params = {
+        "RequestItems" : {
+            "Recipes": {
+                "Keys": []
+            }
+        }
+    };
+    req.user.Item.submitted_recipes.values.forEach(function(element){
+        params.RequestItems.Recipes.Keys.push({"Recipe":element});
+    });
+    docClient.batchGet(params, function(err, data) {
+        console.log('error: '+ err);
+        // console.log(jsDump.parse(data));
+        res.render('pantry', {
+            title: 'My Pantry',
+            submitted: data.Responses.Recipes
+        });
+    });
+
 });
 
 router.get('/submit', checkAuth, function(req, res, next) {
@@ -103,6 +121,25 @@ router.get('/logout', function(req, res){
     res.locals.users = null;
     req.logout();
     res.redirect('/');
+});
+
+router.get('/recipe', function(req, res){
+    var name = req.query.name;
+    var params = {
+        TableName: "Recipes",
+        Key:{
+            "Recipe": name
+        }
+    };
+
+    docClient.get(params, function(err, data) {
+        if (err) {
+            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+            res.json(data.Item);
+        }
+    });
 });
 
 module.exports = router;
