@@ -59,9 +59,13 @@ def individualRecipeScrape(link):
 	#steps
 	step_list = recipe_soup.find('div', {"class":"w_details"})
 	photo_list = step_list.find_all('img')
+	print "****" + str(photo_list)
+	counter = 1
 	for photo in photo_list:
-		step_photos.append(str(photo_list).split('\"')[1])
-		print step_photos
+		try:
+			step_photos.append(str(photo).split('\"')[1])
+		except IndexError:
+			print step_photos
 	rec_steps = step_list.find_all('p')
 	for step in rec_steps:
 		steps.append(step.getText().lstrip())
@@ -91,6 +95,7 @@ def individualRecipeScrape(link):
 	#photo link stored in photo_link
 	#step photos stored in "step_photo"
 	#steps = {{text: "", imageurl: ""}, }
+	print "***" + str(step_photos)
 	counter = 0
 	step_dict = []
 	for step in steps:
@@ -131,13 +136,12 @@ def individualRecipeScrape(link):
 		attrs=attrs
 	)
 	item.put()
-	time.sleep(0.25)
-
+	time.sleep(0.2)
 
 
 #sidechef url
 
-page = 'https://www.sidechef.com/search/query/?q=Beginner&start=360&rows=100'
+page = 'https://www.sidechef.com/search/query/?q=Beginner&start=345&rows=30'
 #open page with firefox
 headers = { 'User-Agent' : 'Mozilla/5.0' }
 req = urllib2.Request(page, None, headers)
