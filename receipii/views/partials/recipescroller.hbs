@@ -1,0 +1,46 @@
+<style>
+    .card-title{
+        background: rgba(0, 0, 0, 0.44) !important;
+        width: 100% !important;
+    }
+</style>
+<div id="scroller_container" >
+
+</div>
+<script>
+
+    function cardInit(r){
+        r.forEach(function(element){
+            if(element.recipe_photo){
+                var item = $('<div class="card">\n' +
+                        '        <div class="card-image">\n' +
+                        '            <img data-recipe-name="'+element.Recipe+'" src="'+element.recipe_photo+'">\n' +
+                        '            <span class="card-title">'+element.Recipe+'</span>\n' +
+                        '        </div>\n' +
+                        '    </div>')
+                $('#scroller_container').append(item);
+            }
+        });
+        $('.card-image img').on('click',function(){
+            console.log($(this).attr('data-recipe-name'));
+
+            recipeInit($(this).attr('data-recipe-name'));
+
+
+        });
+        
+
+    function initScroller(r,a){
+        if(r==='trending'){
+
+        }
+        $.ajax({
+            method: "GET",
+            url: "/recipe",
+            data: { "amount": a }
+        }).done(function( msg ) {
+            console.log(msg);
+            cardInit(msg);
+        });
+    }
+</script>

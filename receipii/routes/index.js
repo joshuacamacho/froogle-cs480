@@ -127,19 +127,51 @@ router.get('/recipe', function(req, res){
     var name = req.query.name;
     var params = {
         TableName: "Recipes",
-        Key:{
-            "Recipe": name
-        }
+
     };
 
-    docClient.get(params, function(err, data) {
-        if (err) {
-            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-            res.json(data.Item);
+    if(name){
+        params.Key={
+            "Recipe": name
+        };
+
+        docClient.get(params, function(err, data) {
+            if (err) {
+                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+                res.json(data.Item);
+            }
+        });
+
+    }else if(req.query.amount){
+        var amount = req.query.amount;
+        params.Limit=amount;
+        docClient.scan(params, onScan);
+
+        function onScan(err, data) {
+            if (err) {
+                console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                // print all the movies
+                console.log("Scan succeeded.");
+                res.json(data.Items);
+                // data.Items.forEach(function(movie) {
+                //
+                // });
+
+                // continue scanning if we have more movies, because
+                // scan can retrieve a maximum of 1MB of data
+                // if (typeof data.LastEvaluatedKey != "undefined") {
+                //     console.log("Scanning for more...");
+                //     params.ExclusiveStartKey = data.LastEvaluatedKey;
+                //     docClient.scan(params, onScan);
+                // }
+            }
         }
-    });
+    }
+
+
 });
 
 module.exports = router;

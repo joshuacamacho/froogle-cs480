@@ -15,7 +15,16 @@
     	vertical-align: text-center;
     	color: white;
 	}
-
+    #trendingHeader{
+        margin-top: 77px;
+        font-size: 30px;
+        text-align: center;
+        background: #c7851d;
+        padding: 16px;
+        color: white;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
 
 	
 
@@ -66,3 +75,11 @@ style="margin 0; vertical-align: center; width:60%; height:50%; background: rgb(
 {{> login}}
 
 {{/if}}
+{{> recipe}}
+<h3 id="trendingHeader">Trending Recipes</h3>
+{{> recipescroller}}
+
+
+<script>
+    initScroller("trending","100");
+</script>
