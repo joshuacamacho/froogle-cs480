@@ -1,4 +1,51 @@
-<h1>Pantry</h1>
+<style>
+    .picturetext {
+
+        position: absolute;
+        top:40%;
+        left:0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<div class="row" style="font-size:0; text-align: center;margin-bottom: 0;position: relative;">
+    <img class="responsive-img" src="/img/pantry.jpg">
+    <p id="text_above_picture" class="picturetext flow-text" style="margin-top: 0;width: 100% ">
+        <span style="width:50%;display:block;background: rgba(255, 255, 255, 0.8); padding: 5px;font-size:1.524rem">Your Pantry</span>
+    </p>
+</div>
 
 
-<a href="/submit">Submit your own recipe</a>
+
+    <h3 style="background: #8e665f;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    color: white;
+    font-weight: 100;
+    font-size: 30px;">My Recipes</h3>
+
+    <div style="margin-top:-90px" class="carousel">
+        <a class="carousel-item" href="javascript:console.log('hi')" onclick="Test();"><img src="https://dw75asfpu22ml.cloudfront.net/recipe/a6dccfa1-3e6d-497a-99b4-2c263e195672.jpg"></a>
+        <a class="carousel-item" href="javascript:console.log('hi')"><img src="https://dw75asfpu22ml.cloudfront.net/recipe/7f8b605a-01ab-4509-a385-cbb852225dde.jpg"></a>
+        <a class="carousel-item" href="javascript:console.log('hi')"><img src="https://dw75asfpu22ml.cloudfront.net/recipe/8a850dec-e254-47cc-a64b-d9575bede142.jpg"></a>
+        <a class="carousel-item" href="javascript:console.log('hi')"><img src="https://dw75asfpu22ml.cloudfront.net/recipe/604ff471-7acf-4c2e-af23-ce7dffda9a28.jpg"></a>
+        <a class="carousel-item" href="javascript:console.log('hi')"><img src="https://dw75asfpu22ml.cloudfront.net/recipe/81e2eef8-5f7a-4861-9e51-3db0d55b336d.jpg"></a>
+    </div>
+
+<div class="row">
+    <a href="/submit">Submit your own recipe</a>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+
+    function Test(){
+        console.log($(this));
+    }
+    $('img').on('click',function(){
+       console.log($(this));
+    });
+</script>
