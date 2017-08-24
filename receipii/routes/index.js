@@ -174,6 +174,23 @@ router.get('/recipe', function(req, res){
 
 });
 
+router.get('/ingredient', function(req, res){
+    var name = req.query.name;
+    var params = {
+        TableName: "Ingredients",
+        Ingredient: name
+    };
+
+        docClient.get(params, function(err, data) {
+            if (err) {
+                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+                res.json(data.Item);
+            }
+        });
+});
+
 module.exports = router;
     
 

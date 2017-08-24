@@ -99,11 +99,23 @@
         $('#recipe_image').attr("src", r.recipe_photo);
         $('#ingredients_list').empty();
         JSON.parse(r.ingredients).forEach(function (element) {
-            $('#ingredients_list').append(
-                    $('<li><strong>' + element.amount + '</strong> '
-                            + element.name + '</li>')
-            );
+            var item = $('<li class="ingr-text"><strong>' + element.amount + '</strong> '+
+                            element.name + '</li>');
+            $('#ingredients_list').append(item);
+
+            $(item).on('click',function(){
+              console.log(element.name);
+              ingredientInit(element.name);
+              console.log("bbbbbbbbbbb");
+            });
+
+
         });
+
+
+
+
+
         stepCount=1;
         $('#steps_container').empty();
         JSON.parse(r.steps).forEach(function (element) {
@@ -117,6 +129,12 @@
             stepCount++;
         });
 
+
+/////////////////////////////////////////////////////////////////////
+//        $('.card-image img').on('click',function(){
+//            recipeInit($(this).attr('data-recipe-name'));
+//        });
+/////////////////////////////////////////////////////////////////////
     }
 
     function recipeInit(name){

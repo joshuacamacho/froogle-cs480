@@ -1,22 +1,86 @@
-<!--<style type="text/css">
-    .modal { width: 75%; height: 100%;}
+<style>
+    #ingredientView{
+        width:70% !important;
+        height:60% !important;
+        max-height:70% !important;
+    }
 </style>
--->
 
 <!-- Modal Structure -->
 <div id="ingredientView" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Ingredient Name</h4>
 
-        <img id="image" src="img/feast.jpg" class="responsive-img">
-        <p>This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient.</p>
+        <div class="col"><h5 id="ingredient_name">Ingredient Name</h5></div>
+
+        <img id="ingredient_image" class="responsive-img" style="width: 100%" src="https://dw75asfpu22ml.cloudfront.net/recipe/8e5f9fa8-4cc9-42a5-82a5-dd126ded9019.jpg">
+
+        <p id="ingredient_description">This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient.</p>
 
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Find recipes</a>   <!-- #! ?-->
     </div>
 </div>
 
+
 <script>
-    $(".modal").modal();
+
+    $(document).ready(function(){
+        $('#ingredientView').modal({
+                    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                    opacity: .5, // Opacity of modal background
+                    inDuration: 300, // Transition in duration
+                    outDuration: 200, // Transition out duration
+                    ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+                    }
+                }
+        );
+    });
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////
+    function ingrDataInit(i) {
+        $('#ingredient_name').html(i.Recipe);
+        $('#ingredient_image').attr("src", i.ingredient_photo);
+    }
+
+    function ingredientInit(name){
+
+        console.log("in ingredintInit"); console.log(name);//logs name like   Olive Oil
+
+        $('#ingredientView').modal('open');
+        $.ajax({
+            method: "GET",
+            url: "/ingredient",////////////
+            data: { name: name }
+        }).done(function( msg ) {
+            console.log(msg);//these functions do not run
+            console.log("before dataInit");
+            ingrDataInit(msg);
+        });
+    }
+
+
+
+
+
 </script>
+
+
+
+
+<!--
+<div class="row section">
+
+        <div class="col"><h5 id="ingredient_name">Ingredient Name</h5></div>
+        <div class="col"><div id="close_ingredient"><i  class="material-icons">close</i></div></div>
+
+        </div>
+-->
