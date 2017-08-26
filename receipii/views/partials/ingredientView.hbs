@@ -3,6 +3,8 @@
         width:70% !important;
         height:60% !important;
         max-height:70% !important;
+        z-index:9000 !important;
+        
     }
 </style>
 
@@ -10,6 +12,7 @@
 <div id="ingredientView" class="modal modal-fixed-footer">
     <div class="modal-content">
 
+        <div id="close_ingredient"><i  class="material-icons">close</i></div>
         <div class="col"><h5 id="ingredient_name">Ingredient Name</h5></div>
 
         <img id="ingredient_image" class="responsive-img" style="height: 50%" src="img/noImage.jpg">
@@ -44,8 +47,9 @@
 
     function ingrDataInit(i) {
         console.log("ccccccccccccccccccccccccccc in dataInit");
+        console.log(i.image);
         $('#ingredient_name').html(i.Ingredient);
-        $('#ingredient_image').attr("src", i.ingredient_photo);//////image not being updated. Is this line the problem?
+        $('#ingredient_image').attr("src", i.image);//////image not being updated. Is this line the problem?
         $('#ingredient_description').html(i.description);
         console.log(i.description);
     }
@@ -67,7 +71,9 @@
     }
 
 
-
+    $('#close_ingredient').on('click',function(){
+        $('#ingredientView').modal('close');
+    });
 
 
 </script>
