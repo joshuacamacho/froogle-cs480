@@ -12,7 +12,7 @@
 
         <div class="col"><h5 id="ingredient_name">Ingredient Name</h5></div>
 
-        <img id="ingredient_image" class="responsive-img" style="width: 100%" src="https://dw75asfpu22ml.cloudfront.net/recipe/8e5f9fa8-4cc9-42a5-82a5-dd126ded9019.jpg">
+        <img id="ingredient_image" class="responsive-img" style="height: 50%" src="img/noImage.jpg">
 
         <p id="ingredient_description">This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient.</p>
 
@@ -42,27 +42,26 @@
 
 
 
-
-
-
-///////////////////////////////////////////////////////////
     function ingrDataInit(i) {
-        $('#ingredient_name').html(i.Recipe);
-        $('#ingredient_image').attr("src", i.ingredient_photo);
+        console.log("ccccccccccccccccccccccccccc in dataInit");
+        $('#ingredient_name').html(i.Ingredient);
+        $('#ingredient_image').attr("src", i.ingredient_photo);//////image not being updated. Is this line the problem?
+        $('#ingredient_description').html(i.description);
+        console.log(i.description);
     }
 
     function ingredientInit(name){
-
-        console.log("in ingredintInit"); console.log(name);//logs name like   Olive Oil
+        console.log("in ingredintInit");
+        console.log(name);//logs name like   Olive Oil
 
         $('#ingredientView').modal('open');
         $.ajax({
             method: "GET",
-            url: "/ingredient",////////////
+            url: "/ingredient",
             data: { name: name }
         }).done(function( msg ) {
-            console.log(msg);//these functions do not run
-            console.log("before dataInit");
+            console.log(msg);
+            console.log("ddddddddddddddddddddbefore dataInit");
             ingrDataInit(msg);
         });
     }

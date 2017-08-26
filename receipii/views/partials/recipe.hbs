@@ -76,7 +76,6 @@
 
 
 <script>
-
     $(document).ready(function(){
         $('#recipe').modal({
                     dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -93,27 +92,22 @@
                 }
         );
     });
-
     function dataInit(r) {
         $('#recipe_name').html(r.Recipe);
         $('#recipe_image').attr("src", r.recipe_photo);
         $('#ingredients_list').empty();
         JSON.parse(r.ingredients).forEach(function (element) {
-            var item = $('<li class="ingr-text"><strong>' + element.amount + '</strong> '+
-                            element.name + '</li>');
-            $('#ingredients_list').append(item);
-
-            $(item).on('click',function(){
-              console.log(element.name);
-              ingredientInit(element.name);
-              console.log("bbbbbbbbbbb");
-            });
-
-
+            $('#ingredients_list').append(
+                    $('<li class="ingr-text"><strong>' + element.amount + '</strong> '
+                            + '<display nameTag="' + element.name + '">' + element.name + '</li>')
+            );
         });
-
-
-
+        $('.ingr-text display').on('click',function(){
+          console.log($(this).attr('nameTag'));
+            ingredientInit($(this).attr('nameTag'));
+          //console.log(inputVar=="Eggs");
+          //console.log(inputVar==="Eggs");
+        });
 
 
         stepCount=1;
@@ -130,11 +124,6 @@
         });
 
 
-/////////////////////////////////////////////////////////////////////
-//        $('.card-image img').on('click',function(){
-//            recipeInit($(this).attr('data-recipe-name'));
-//        });
-/////////////////////////////////////////////////////////////////////
     }
 
     function recipeInit(name){
@@ -148,9 +137,7 @@
             dataInit(msg);
         });
     }
-
     $('#close_recipe').on('click',function(){
         $('#recipe').modal('close');
     });
 </script>
-

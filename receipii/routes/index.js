@@ -181,6 +181,17 @@ router.get('/ingredient', function(req, res){
         Ingredient: name
     };
 
+
+
+    params.Key={
+        "Ingredient": name
+    };
+
+
+
+
+
+
         docClient.get(params, function(err, data) {
             if (err) {
                 console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
