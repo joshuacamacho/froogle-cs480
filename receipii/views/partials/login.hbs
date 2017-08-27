@@ -5,15 +5,19 @@
 
         <form action="/login" method="post" novalidate>
             <div>
-                <label>Email:</label>
-                <input id="email" type="text" name="username"/>
+               <label <for="email">  <i class="material-icons"> email </i> Email <data-error="Invalid Email" data-success="Valid Email"> </label>   
+               <input required placeholder=" " id="email" name="username" type="email" name="username" class="validate" /> 
+                                  
             </div>
             <div>
-                <label>Password:</label>
-                <input type="password" name="password"/>
+                <label <for="password"> <i class="material-icons"> visibility </i> Password </label>
+                <input id="password" name="password" type="password" class="validate" />
+                
             </div>
             <div>
-                <button type="submit"  class="btn-block btn btn-lg btn-primary">Log In</button>
+              
+                <button type="submit" style="margin-left:auto;margin-right:auto;display:block;"
+                 class="btn-block btn btn-lg btn-primary ">Log In</button>
             </div>
         </form>
 
@@ -33,3 +37,7 @@
 //       if(emailGood && passwordGood) 
     });
 </script>
+
+<!--<input id="email" type="text" name="username"/>-->
+<!--<input type="password" name="password"/>-->
+<!-- <button type="submit"  class="btn-block btn btn-lg btn-primary">Log In</button>-->

@@ -1,3 +1,4 @@
+
 8/1
 Present: Everyone
 LOG
@@ -827,7 +828,7 @@ thomaslv [9:01 AM]
 Yesterday I worked a little bit on getting ingredients, today I will continue.
 
 ben [9:02 AM] 
-Yesterday, I worked on the ingredient view, but I’m having trouble understanding the function calls to the database. Should I wait until the ingredients are in the database?
+Yesterday, I worked on the ingredient view, but IÂ’m having trouble understanding the function calls to the database. Should I wait until the ingredients are in the database?
 
 joshuajcamacho [9:03 AM] 
 I thought the ingredients were in the database ?
