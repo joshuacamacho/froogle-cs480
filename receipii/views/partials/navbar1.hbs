@@ -1,0 +1,46 @@
+	  <link href="https://fonts.googleapis.com/css?family=Almendra+Display" rel="stylesheet">
+      <style type="text/css">
+      h4 {text-align:center;margin:1px;}
+      .brand-logo {
+		font-family: 'Almendra Display', cursive;
+		font-weight: 600;
+	  }
+      </style>
+
+
+      <ul id="slide-out" class="side-nav">
+        <li><a href="/"><i class="material-icons">home</i>Home</a></li> 
+      {{#if user}}
+          <li><a href="/pantry"><i class="material-icons">person_pin</i>Pantry</a></li>
+          <li><a href="/logout"><i class="material-icons">person_pin</i>Logout</a></li>
+      {{else}}
+          <li><a class="modal-trigger" href="#register"><i class="material-icons">person_pin</i>Register</a></li>
+          <li><a class="modal-trigger" href="#login"><i class="material-icons">person_pin</i>Login</a></li>
+      {{/if}}
+      </ul>
+
+    <div class="navbar-fixed"> 
+     <nav> 
+     <div class="nav-wrapper white"> 
+	  
+	   <ul class="left"> 
+	  
+       <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons large black-text left">menu</i></a></li> 
+       <li><a href="#!" class="brand-logo black-text center">Recipii</a></li> 
+    </ul>         
+		 </div> 
+		
+       </div> 
+     </nav> 
+
+
+
+<script type="text/javascript">
+  (function($){
+  $(function(){
+
+      $('.button-collapse').sideNav();
+
+    }); // end of document ready
+  })(jQuery); // end of jQuery name space
+</script>

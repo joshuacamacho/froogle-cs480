@@ -14,6 +14,14 @@
    /* background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.icon {
+  display: inline-block;
+  line-height: 30px;
+  padding-left: 30px;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg") no-repeat scroll 0 0 transparent;
+}
+
+
 </style>
   <a class="waves-effect waves-light btn modal-trigger" href="#register">Register</a>
 
@@ -24,24 +32,30 @@
 
 
 <div class="row">
+ 
   <form action="/users" method="post" class="col s12">
     <div class="row">
+    
     <div class="input-field col s12">
-      <input required placeholder=" " id="email" name="username" type="email" class="validate">
-      <label for="email" data-error="Invalid Email" data-success="Valid Email">Email</label>
+      
+      <input required placeholder=" " id="email" name="username" type="email" class="validate" >
+      
+      <label <for="email"> <i class="material-icons"> email </i> Email  <data-error="Invalid Email" data-success="Valid Email"> </label>
     </div>
     </div>
    <div class="row">
     <div class="input-field col s12">
+
       <input id="password" name="password" type="password" class="validate">
-      <label for="password">Password</label>
+      <label <for="password"> <i class="material-icons"> visibility </i> Password </label>
     </div>
    </div>
+
     <div class="row">
     <div class="input-field col s12">
       <input id="confirmpassword" type="password" class="validate" onkeyup="checkPass(); return false;" >
       <span id="confirmMessage" class="confirmMessage"></span>
-      <label for="confirmpassword" data-error="Password not match" data-success="Password Match">Confirm Password</label>
+      <label <for="confirmpassword"> <i class="material-icons"> visibility </i> Confirm Password <data-error="Passwords do not match" data-success="Passwords Match"></label>
     </div>
     </div>
 
@@ -59,7 +73,7 @@
 
 
           <button type="submit" style="margin-left:auto;margin-right:auto;display:block;"
-          class="btn-block btn btn-lg btn-primary ">Register Account</button>
+          class="btn-block btn btn-lg btn-primary ">Sign Up</button>
   </form>
     </div>
     </div>
@@ -99,5 +113,9 @@ function checkPass()
         message.innerHTML = "Passwords Do Not Match!"
     }
 }  
+
+
+
+
   </script>
 
