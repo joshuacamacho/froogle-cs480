@@ -207,6 +207,13 @@ router.get('/recipe', function(req, res){
                 console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
             } else {
                 console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+                if(req.user && req.user.Item.favorite_recipes){
+                    if(req.user.Item.favorite_recipes.includes(name)){
+                        data.Item.isFavorite=true;
+                    }else{
+                        data.Item.isFavorite=false;
+                    }
+                }
                 res.json(data.Item);
             }
         });
@@ -319,6 +326,44 @@ router.get('/allIngredients', function(req, res){
         var results = response.hits;
         res.json(results);
     });
+});
+
+router.post('/favorite', checkAuth, function(req, res){
+    var action=req.body.action;
+    var name=req.body.name;
+    var favorites = [];
+    if (req.user.Item.favorite_recipes) {
+        req.user.Item.favorite_recipes.forEach(function (item) {
+            favorites.push(item);
+        });
+    }
+    if(action=="add") {
+        if(!favorites.includes(name)) favorites.push(name);
+    }else if(action=="remove") {
+        favorites.splice(favorites.indexOf(name),1);
+    }
+
+    var params = {
+        TableName:"Users",
+        Key:{
+            "Email": req.user.Item.Email,
+        },
+        UpdateExpression: "set favorite_recipes = :f",
+        ExpressionAttributeValues:{
+            ":f":favorites
+        }
+    };
+
+    console.log("Updating the item...");
+    docClient.update(params, function(err, data) {
+        if (err) {
+            console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+        }
+        res.json({});
+    });
+
 });
 
 module.exports = router;

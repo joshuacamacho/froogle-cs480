@@ -134,6 +134,11 @@
         $('#recipe_name').html(r.Recipe);
         $('#recipe_image').attr("src", r.recipe_photo);
         $('#favorite_recipe').attr("data-recipe-name", r.Recipe);
+        if(r.isFavorite) {
+            $('#favorite_recipe i').html("star");
+        }else{
+            $('#favorite_recipe i').html("star_border");
+        }
         $('#ingredients_list').empty();
         JSON.parse(r.ingredients).forEach(function (element) {
             $('#ingredients_list').append(
@@ -185,13 +190,26 @@
         var name = $(this).attr('data-recipe-name');
         console.log(name);
         var icon =$($(this).children()[0]);
+        var action;
         if(icon.html()=='star_border'){
             console.log("not favorite");
+            action="add";
             icon.html("star");
             Materialize.toast('Added to favorites!', 4000);
         }else{
+            action="remove";
             icon.html("star_border");
             Materialize.toast('Removed from favorites', 4000);
         }
+        $.ajax({
+            method: "POST",
+            url: "/favorite",
+            data: {
+                action:action,
+                name:name
+            }
+        }).done(function( msg ) {
+            console.log(msg);
+        });
     });
 </script>
