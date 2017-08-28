@@ -7,18 +7,45 @@
         max-height:100% !important;
         top:0 !important;
     }
+    #recipe_name{
+        position: absolute;
+        bottom: 6px;
+        color: white;
+        background: rgba(0, 0, 0, 0.59);
+        margin: 0;
+        width: 100%;
+        padding: 20px;
+        font-size: 19px;
+    }
+    #close_recipe{
+        position: absolute;
+        top: 8px;
+        color: white;
+        left: 8px;
+        background: rgba(0, 0, 0, 0.36);
+        width: 24px;
+        height: 24px;
+    }
+    .ingr-text{
+        font-size: 19px;
+        font-weight: 300;
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
 </style>
 
 
 <div id="recipe" class="modal">
-    <div class="modal-content">
-
+    <div  style="padding:0" class="modal-content">
+        <div style="position:relative" class="row">
         <div id="close_recipe"><i  class="material-icons">close</i></div>
         <h6 id="recipe_name">Test</h6>
         <img id="recipe_image" class="responsive-img" src="https://dw75asfpu22ml.cloudfront.net/recipe/8e5f9fa8-4cc9-42a5-82a5-dd126ded9019.jpg">
-        <div class="row">
-            Ingredients:
         </div>
+        <div class="container">
+        <h3 style="font-weight: 200;font-size: 31px;">
+            Ingredients
+        </h3>
         <div class="row">
             <ul id="ingredients_list">
                 <li><strong>16 oz</strong> Salt</li>
@@ -26,6 +53,7 @@
         </div>
         <div id="steps_container">
 
+        </div>
         </div>
     </div>
     <!--<div class="modal-footer">-->
