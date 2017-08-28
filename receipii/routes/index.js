@@ -241,16 +241,15 @@ router.get('/recipeSearch', function(req, res, next) {
     var queryObj={
         query:{
             bool:{
-                must:[]
+                should:[]
             }
-        }
+        },
+        size:100
     };
     req.query.terms.forEach(function(item){
-        queryObj.query.bool.must.push({
+        queryObj.query.bool.should.push({
            wildcard:{
-               "ingredients.name":{
-                   value:item.tag.toLowerCase()
-               }
+               "ingredients.name": "*"+item.tag.toLowerCase()+"*"
            }
         });
     });
