@@ -8,9 +8,9 @@
             placeholder:"Enter Ingredients",
             autocompleteOptions: {
                 data: {
-                    'Apple': null,
-                    'Microsoft': null,
-                    'Google': null
+                    'egg': null,
+                    'chicken': null,
+                    'salmon': null
                 },
                 limit: Infinity,
                 minLength: 1
@@ -20,6 +20,7 @@
     var searchItems=[];
     $('.chips').on('chip.add', function(e, chip){
         // you have the added chip here
+        $('#registerSection').hide();
         console.log($('.chips').material_chip('data'));
         initScroller("search",$('.chips').material_chip('data'));
     });

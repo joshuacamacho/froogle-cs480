@@ -15,16 +15,7 @@
     	vertical-align: text-center;
     	color: white;
 	}
-    #trendingHeader{
-        margin-top: 77px;
-        font-size: 30px;
-        text-align: center;
-        background: #c7851d;
-        padding: 16px;
-        color: white;
-        font-weight: 100;
-        margin-bottom: 0;
-    }
+
 
 	
 
@@ -66,7 +57,7 @@
 {{else}}
 
 <!-- register button and other text-->
-<div style="height:13vh; margin 0; align-items: center;  text-align: center;">
+<div id="registerSection" style="margin 0; align-items: center;  text-align: center;">
     <p class="flow-text activitytext" id="instructions" >Save favorites, submit your own and more!</p>
 	{{> register}}
     <p class="flow-text" id="member_text">Already a member? <a class="modal-trigger" href="#login">Click here to log in</a></p>
@@ -76,7 +67,7 @@
 
 {{/if}}
 {{> recipe}}
-<h3 id="trendingHeader">Trending Recipes</h3>
+
 {{> recipescroller}}
 
 

@@ -3,7 +3,20 @@
         background: rgba(0, 0, 0, 0.44) !important;
         width: 100% !important;
     }
+    #trendingHeader{
+        font-size: 30px;
+        text-align: center;
+        background: #c7851d;
+        padding: 16px;
+        color: white;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+    .card{
+        margin-top: 0 !important;
+    }
 </style>
+<h3 id="trendingHeader">Trending Recipes</h3>
 <div id="scroller_container" >
 
 </div>
@@ -52,6 +65,7 @@
                 url: "/recipeSearch",
                 data: { terms: a }
             }).done(function( msg ) {
+                $('#trendingHeader').html("Search Results");
                 console.log(msg);
                 cardInit(msg.hits);
             });
