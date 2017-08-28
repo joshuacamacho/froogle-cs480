@@ -1,0 +1,26 @@
+<div class="container">
+<div class="chips"></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.chips').material_chip({
+            placeholder:"Enter Ingredients",
+            autocompleteOptions: {
+                data: {
+                    'Apple': null,
+                    'Microsoft': null,
+                    'Google': null
+                },
+                limit: Infinity,
+                minLength: 1
+            }
+        });
+    });
+    var searchItems=[];
+    $('.chips').on('chip.add', function(e, chip){
+        // you have the added chip here
+        console.log($('.chips').material_chip('data'));
+        initScroller("search",$('.chips').material_chip('data'));
+    });
+</script>

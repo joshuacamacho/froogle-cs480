@@ -2,8 +2,131 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e14581e-d4fb-4300-9fc5-99ace6dd3a57" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/lib/_http_agent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/lib/agent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/lib/https_agent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/lib/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/agentkeepalive/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-regex/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-regex/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-regex/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-regex/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-styles/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-styles/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-styles/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/ansi-styles/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/chalk/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/chalk/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/chalk/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/chalk/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/.eslintignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/.node-version" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.compat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.compat.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.underscore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/dist/lodash.underscore.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/lodash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/node_modules/lodash/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/elasticsearch.angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/elasticsearch.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/elasticsearch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/0_90.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/1_7.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/2_4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/5_6.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/6_0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/6_x.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/browser_index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/apis/master.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/client_action.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connection_pool.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/browser_index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/http.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/connectors/xhr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/errors.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/host.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/log.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/logger.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/browser_index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/console.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/file.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/stdio.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/loggers/tracer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/nodes_to_host.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/selectors/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/selectors/random.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/selectors/round_robin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/serializers/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/serializers/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/serializers/json.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/transport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/transport/find_common_protocol.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/transport/sniff_on_connection_fault.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/src/lib/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/webpack_config/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/webpack_config/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/webpack_config/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/elasticsearch/webpack_config/lib.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/escape-string-regexp/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/escape-string-regexp/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/escape-string-regexp/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/escape-string-regexp/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/has-ansi/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/has-ansi/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/has-ansi/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/has-ansi/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.get/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.get/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.get/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.get/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.isempty/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.isempty/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.isempty/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.isempty/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.trimend/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.trimend/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.trimend/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/lodash.trimend/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/strip-ansi/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/strip-ansi/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/strip-ansi/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/strip-ansi/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/supports-color/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/supports-color/license" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/supports-color/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/node_modules/supports-color/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/receipii/views/partials/search.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" afterPath="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/package.json" afterPath="$PROJECT_DIR$/receipii/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/routes/index.js" afterPath="$PROJECT_DIR$/receipii/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/views/index.hbs" afterPath="$PROJECT_DIR$/receipii/views/index.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs" afterPath="$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,8 +146,8 @@
           <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/views/index.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1326">
-                  <caret line="78" column="23" lean-forward="false" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+                <state relative-caret-position="-104">
+                  <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -43,8 +166,28 @@
           <file leaf-file-name="recipescroller.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="578">
-                  <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="navbar1.hbs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar1.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-424">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="navbar.hbs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="86">
+                  <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -56,7 +199,6 @@
                 <state relative-caret-position="164951">
                   <caret line="9707" column="9" lean-forward="false" selection-start-line="9707" selection-start-column="9" selection-end-line="9707" selection-end-column="9" />
                   <folding>
-                    <element signature="n#!!doc" expanded="true" />
                     <marker date="1503366531384" expanded="true" signature="197526:197533" ph="..." />
                     <marker date="1503366531384" expanded="true" signature="267164:267193" ph="..." />
                     <marker date="1503366531384" expanded="true" signature="267442:267452" ph="..." />
@@ -78,9 +220,11 @@
           <file leaf-file-name="register.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/views/partials/register.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1037">
-                  <caret line="61" column="6" lean-forward="false" selection-start-line="61" selection-start-column="6" selection-end-line="62" selection-end-column="5" />
-                  <folding />
+                <state relative-caret-position="1275">
+                  <caret line="75" column="6" lean-forward="false" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+                  <folding>
+                    <marker date="1503876080428" expanded="true" signature="4183:4194" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -90,16 +234,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
                   <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="submit.hbs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/receipii/views/submit.hbs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -123,7 +257,7 @@
             <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="799">
-                  <caret line="53" column="7" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="7" />
+                  <caret line="53" column="7" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -132,8 +266,18 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/receipii/routes/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="133" column="20" lean-forward="true" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+                <state relative-caret-position="355">
+                  <caret line="265" column="7" lean-forward="false" selection-start-line="265" selection-start-column="7" selection-end-line="265" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="search.hbs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/receipii/views/partials/search.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -171,10 +315,11 @@
         <option value="$PROJECT_DIR$/receipii/views/partials/login.hbs" />
         <option value="$PROJECT_DIR$/receipii/views/partials/register.hbs" />
         <option value="$PROJECT_DIR$/receipii/views/pantry.hbs" />
-        <option value="$PROJECT_DIR$/receipii/routes/index.js" />
-        <option value="$PROJECT_DIR$/receipii/views/index.hbs" />
-        <option value="$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs" />
         <option value="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" />
+        <option value="$PROJECT_DIR$/receipii/views/index.hbs" />
+        <option value="$PROJECT_DIR$/receipii/views/partials/search.hbs" />
+        <option value="$PROJECT_DIR$/receipii/routes/index.js" />
+        <option value="$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs" />
       </list>
     </option>
   </component>
@@ -195,7 +340,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/receipii/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="56" />
     <option name="width" value="2800" />
@@ -217,6 +362,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,7 +418,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,16 +517,17 @@
       <workItem from="1503244362634" duration="4148000" />
       <workItem from="1503269522306" duration="17283000" />
       <workItem from="1503445521064" duration="4421000" />
+      <workItem from="1503870462266" duration="8852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55130000" />
+    <option name="totallyTimeSpent" value="63982000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="28" width="1400" height="880" extended-state="0" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18831168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17411608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -389,7 +535,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.414832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -412,27 +558,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/receipii/views/submit.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/passport-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -515,7 +645,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1503876080428" expanded="true" signature="4183:4194" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -593,7 +725,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1503876080428" expanded="true" signature="4183:4194" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,7 +774,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
           <caret line="58" column="52" lean-forward="false" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-          <folding />
+          <folding>
+            <marker date="1503876080428" expanded="true" signature="4183:4194" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -712,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/receipii/public/js/materialize.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -753,7 +882,6 @@
         <state relative-caret-position="164951">
           <caret line="9707" column="9" lean-forward="false" selection-start-line="9707" selection-start-column="9" selection-end-line="9707" selection-end-column="9" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <marker date="1503366531384" expanded="true" signature="197526:197533" ph="..." />
             <marker date="1503366531384" expanded="true" signature="267164:267193" ph="..." />
             <marker date="1503366531384" expanded="true" signature="267442:267452" ph="..." />
@@ -763,32 +891,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/partials/register.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="6" lean-forward="false" selection-start-line="61" selection-start-column="6" selection-end-line="62" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1275">
+          <caret line="75" column="6" lean-forward="false" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+          <folding>
+            <marker date="1503876080428" expanded="true" signature="4183:4194" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
-          <caret line="53" column="7" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="23" lean-forward="false" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <caret line="53" column="7" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="53" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -801,18 +915,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar1.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-424">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/search.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/receipii/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="133" column="20" lean-forward="true" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+        <state relative-caret-position="355">
+          <caret line="265" column="7" lean-forward="false" selection-start-line="265" selection-start-column="7" selection-end-line="265" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="204">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding />
         </state>
       </provider>
