@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e14581e-d4fb-4300-9fc5-99ace6dd3a57" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/routes/index.js" afterPath="$PROJECT_DIR$/receipii/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/views/pantry.hbs" afterPath="$PROJECT_DIR$/receipii/views/pantry.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" afterPath="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3578352">
+    <splitter split-orientation="horizontal" split-proportion="0.43214864">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
@@ -42,8 +44,8 @@
           <file leaf-file-name="recipescroller.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4">
-                  <caret line="30" column="84" lean-forward="false" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
+                <state relative-caret-position="81">
+                  <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -72,13 +74,23 @@
           <file leaf-file-name="materialize.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/public/js/materialize.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="164951">
+                <state relative-caret-position="17">
                   <caret line="9707" column="9" lean-forward="false" selection-start-line="9707" selection-start-column="9" selection-end-line="9707" selection-end-column="9" />
                   <folding>
                     <marker date="1503366531384" expanded="true" signature="197526:197533" ph="..." />
                     <marker date="1503366531384" expanded="true" signature="267164:267193" ph="..." />
                     <marker date="1503366531384" expanded="true" signature="267442:267452" ph="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/receipii/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="325" column="6" lean-forward="false" selection-start-line="325" selection-start-column="6" selection-end-line="325" selection-end-column="6" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -105,11 +117,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="recipe.hbs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="recipe.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipe.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1751">
-                  <caret line="139" column="53" lean-forward="false" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
+                <state relative-caret-position="-374">
+                  <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -119,44 +131,27 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="passport-config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/receipii/passport-config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="816">
-                  <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="pantry.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="pantry.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="404">
-                  <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+                <state relative-caret-position="310">
+                  <caret line="137" column="24" lean-forward="false" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
                   <folding>
                     <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-                    <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-                    <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-                    <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+                    <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+                    <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+                    <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+                    <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/receipii/routes/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="94" column="11" lean-forward="false" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -164,8 +159,8 @@
           <file leaf-file-name="search.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/receipii/views/partials/search.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="11" />
+                <state relative-caret-position="408">
+                  <caret line="36" column="7" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="36" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -186,6 +181,9 @@
       <find>ingredient</find>
       <find>recipeSea</find>
       <find>/pantry</find>
+      <find>/ingredient</find>
+      <find>tag</find>
+      <find>/ingredi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,8 +207,8 @@
         <option value="$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs" />
         <option value="$PROJECT_DIR$/receipii/views/partials/search.hbs" />
         <option value="$PROJECT_DIR$/receipii/views/partials/recipe.hbs" />
-        <option value="$PROJECT_DIR$/receipii/views/pantry.hbs" />
         <option value="$PROJECT_DIR$/receipii/routes/index.js" />
+        <option value="$PROJECT_DIR$/receipii/views/pantry.hbs" />
       </list>
     </option>
   </component>
@@ -409,12 +407,12 @@
       <workItem from="1503269522306" duration="17283000" />
       <workItem from="1503445521064" duration="4421000" />
       <workItem from="1503870462266" duration="15923000" />
-      <workItem from="1503932949986" duration="10655000" />
+      <workItem from="1503932949986" duration="16295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81708000" />
+    <option name="totallyTimeSpent" value="87348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
@@ -451,7 +449,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="81" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -463,11 +461,14 @@
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+            <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+            <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
           </folding>
         </state>
       </provider>
@@ -522,6 +523,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -532,11 +534,14 @@
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+            <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+            <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
           </folding>
         </state>
       </provider>
@@ -609,6 +614,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -619,11 +625,14 @@
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+            <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+            <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
           </folding>
         </state>
       </provider>
@@ -702,11 +711,14 @@
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+            <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+            <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
           </folding>
         </state>
       </provider>
@@ -730,6 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -758,6 +771,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -798,18 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/public/js/materialize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164951">
-          <caret line="9707" column="9" lean-forward="false" selection-start-line="9707" selection-start-column="9" selection-end-line="9707" selection-end-column="9" />
-          <folding>
-            <marker date="1503366531384" expanded="true" signature="197526:197533" ph="..." />
-            <marker date="1503366531384" expanded="true" signature="267164:267193" ph="..." />
-            <marker date="1503366531384" expanded="true" signature="267442:267452" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/partials/register.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -836,19 +838,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="30" column="84" lean-forward="false" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/receipii/views/partials/navbar1.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/search.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="36" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipescroller.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipe.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,47 +882,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/partials/search.hbs">
+    <entry file="file://$PROJECT_DIR$/receipii/public/js/materialize.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/partials/recipe.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="139" column="53" lean-forward="false" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
+        <state relative-caret-position="17">
+          <caret line="9707" column="9" lean-forward="false" selection-start-line="9707" selection-start-column="9" selection-end-line="9707" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <marker date="1503946791220" expanded="false" signature="245:313" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="439:465" ph="..." />
-            <marker date="1503946791220" expanded="false" signature="489:582" ph="..." />
+            <marker date="1503366531384" expanded="true" signature="197526:197533" ph="..." />
+            <marker date="1503366531384" expanded="true" signature="267164:267193" ph="..." />
+            <marker date="1503366531384" expanded="true" signature="267442:267452" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receipii/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="94" column="11" lean-forward="false" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="325" column="6" lean-forward="false" selection-start-line="325" selection-start-column="6" selection-end-line="325" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receipii/views/pantry.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="137" column="24" lean-forward="false" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#2;n#!!top" expanded="true" />
+            <marker date="1503955741407" expanded="false" signature="245:313" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="439:465" ph="..." />
+            <marker date="1503955741407" expanded="false" signature="489:582" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

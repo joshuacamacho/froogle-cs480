@@ -28,7 +28,7 @@
     font-weight: 100;
     font-size: 30px;">My Recipes</h3>
 
-    <div style="margin-top:-90px" class="carousel">
+    <div style="margin-top:-30px;height:263px" class="carousel">
     {{#each submitted}}
         <a class="carousel-item" data-recipe-name="{{Recipe}}" href="#"><img src="{{recipe_photo}}"></a>
     {{/each}}
@@ -36,12 +36,12 @@
 
 
 
-<div class="row">
+<div class="row" style="text-align: center">
 
-    <a href="/submit">Submit your own recipe</a>
+    <a class="btn grey lighten-4" style="color: #222" href="/submit">Submit your own recipe</a>
 </div>
 
-<h3 style="background: #8e665f;
+<h3 style="background: #54946a;
     text-align: center;
     margin: 0;
     padding: 15px;
@@ -49,11 +49,26 @@
     font-weight: 100;
     font-size: 30px;">My Favorites</h3>
 
-<div style="margin-top:-90px" class="carousel">
+<div style="margin-top:-30px;height: 263px;" class="carousel">
     {{#each favorites}}
         <a class="carousel-item" data-recipe-name="{{Recipe}}" href="#"><img src="{{recipe_photo}}"></a>
     {{/each}}
 </div>
+
+<h3 style="background: #945454;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    color: white;
+    font-weight: 100;
+    font-size: 30px;">My Ingredients</h3>
+<div class="container">
+    <div class="row">
+        <div class="chips"></div>
+    </div>
+</div>
+
+{{> recipescroller}}
 <script>
     $(document).ready(function(){
         $('.carousel').carousel();
@@ -63,9 +78,69 @@
 
     $('.carousel-item').on('click',function(){
        console.log($(this).attr('data-recipe-name'));
-
        recipeInit($(this).attr('data-recipe-name'));
+    });
 
+    $.ajax({
+        method: "GET",
+        url: "/allIngredients",
+        data: {}
+    }).done(function( msg ) {
+        console.log(msg);
+        $.ajax({
+            method: "GET",
+            url: "/userIngredients",
+            data: {}
+        }).done(function( ingrs ) {
+            console.log(ingrs);
+            var data=[];
+            if(ingrs.ingredients.length>0){
+                ingrs.ingredients.forEach(function(item){
+                   data.push({
+                       tag:item
+                   });
+                });
+            }
+            console.log(data);
+            $('.chips').material_chip({
+                placeholder:"Enter Ingredients",
+                data:data,
+                autocompleteOptions: {
+                    data: msg.hits[0]._source,
+                    limit: Infinity,
+                    minLength: 1
+                }
+            });
+            initScroller("search",$('.chips').material_chip('data'));
 
+            $('.chips').on('chip.add', function(e, chip){
+                // you have the added chip here
+                var ing = $('.chips').material_chip('data');
+                initScroller("search",$('.chips').material_chip('data'));
+                console.log(ing);
+                $.ajax({
+                    method: "POST",
+                    data: JSON.stringify(ing),
+                    contentType: 'application/json',
+                    url: "/ingredient",
+                }).done(function( msg ) {
+
+                });
+
+            });
+            $('.chips').on('chip.delete', function(e, chip){
+                var ing = $('.chips').material_chip('data');
+                initScroller("search",$('.chips').material_chip('data'));
+                console.log(ing);
+                $.ajax({
+                    method: "POST",
+                    data: JSON.stringify(ing),
+                    contentType: 'application/json',
+                    url: "/ingredient",
+                }).done(function( msg ) {
+
+                });
+            });
+        });
     });
 </script>

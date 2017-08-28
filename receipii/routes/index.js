@@ -320,6 +320,39 @@ router.get('/ingredient', function(req, res){
     });
 });
 
+router.post('/ingredient',checkAuth, function(req, res){
+    var ingredients=[];
+    req.body.forEach(function(item){
+       ingredients.push(item.tag);
+    });
+
+    var params = {
+        TableName:"Users",
+        Key:{
+            "Email": req.user.Item.Email,
+        },
+        UpdateExpression: "set ingredients = :f",
+        ExpressionAttributeValues:{
+            ":f":ingredients
+        }
+    };
+
+    console.log("Updating the item...");
+    docClient.update(params, function(err, data) {
+        if (err) {
+            console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+        }
+        res.json({});
+    });
+});
+
+router.get('/userIngredients',function(req,res){
+   var ingredients = req.user.Item.ingredients || [];
+   res.json({ingredients:ingredients});
+});
+
 router.get('/allIngredients', function(req, res){
     var queryObj={
         query:{
