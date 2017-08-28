@@ -29,11 +29,11 @@
 
             if(element.recipe_photo){
                 var item = $('<div data-recipe-name="'+element.Recipe+'" class="card">\n' +
-                        '        <div class="card-image">\n' +
-                        '            <img src="'+element.recipe_photo+'">\n' +
-                        '            <span class="card-title">'+element.Recipe+'</span>\n' +
-                        '        </div>\n' +
-                        '    </div>')
+                '<div class="card-image">\n' +
+                '<img src="'+element.recipe_photo+'">\n' +
+                '<span class="card-title">'+element.Recipe+'</span>\n' +
+                '</div>\n' +
+                '</div>')
                 $('#scroller_container').append(item);
             }
         });
@@ -53,11 +53,11 @@
             $('#trendingHeader').html("Trending Recipes");
             $.ajax({
                 method: "GET",
-                url: "/recipe",
-                data: { "amount": a }
+                url: "/recipeSearch",
+                data: {}
             }).done(function( msg ) {
                 console.log(msg);
-                cardInit(msg);
+                cardInit(msg.hits);
             });
         }
         if(r==='search'){

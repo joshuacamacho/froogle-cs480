@@ -13,7 +13,7 @@
             $('.chips').material_chip({
                 placeholder:"Enter Ingredients",
                 autocompleteOptions: {
-                    data: msg,
+                    data: msg.hits[0]._source,
                     limit: Infinity,
                     minLength: 1
                 }

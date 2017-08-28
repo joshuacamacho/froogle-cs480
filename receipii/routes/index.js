@@ -244,24 +244,34 @@ router.get('/recipe', function(req, res){
 });
 
 router.get('/recipeSearch', function(req, res, next) {
-    var queryObj={
-        query:{
-            bool:{
-                should:[]
-            }
-        },
-        size:100
-    };
-    req.query.terms.forEach(function(item){
-        var split = item.tag.split(" ");
-        split.forEach(function(part){
-            queryObj.query.bool.should.push({
-               wildcard:{
-                   "ingredients.name": "*"+part.toLowerCase()+"*"
-               }
+    var queryObj;
+    if(req.query.terms){
+        queryObj={
+            query:{
+                bool:{
+                    should:[]
+                }
+            },
+            size:100
+        };
+        req.query.terms.forEach(function(item){
+            var split = item.tag.split(" ");
+            split.forEach(function(part){
+                queryObj.query.bool.should.push({
+                   wildcard:{
+                       "ingredients.name": "*"+part.toLowerCase()+"*"
+                   }
+                });
             });
         });
-    });
+    }else{
+        queryObj={
+            query:{
+                match_all:{}
+            },
+            size:50
+        }
+    }
 
     esClient.search({
        index:"recipii",
@@ -280,58 +290,35 @@ router.get('/ingredient', function(req, res){
         TableName: "Ingredients",
         Ingredient: name
     };
-
-
-
     params.Key={
         "Ingredient": name
     };
-
-
-
-
-
-
-        docClient.get(params, function(err, data) {
-            if (err) {
-                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-                res.json(data.Item);
-            }
-        });
+    docClient.get(params, function(err, data) {
+        if (err) {
+            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+            res.json(data.Item);
+        }
+    });
 });
 
 router.get('/allIngredients', function(req, res){
-    var params = {
-        TableName: "Ingredients",
-        amount:"100"
-    };
-
-    docClient.scan(params, onScan);
-    var ingredients = {};
-    function onScan(err, data) {
-        if (err) {
-            console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            // print all the movies
-            console.log("Scan succeeded.");
-
-
-            // continue scanning if we have more movies, because
-            // scan can retrieve a maximum of 1MB of data
-            if (typeof data.LastEvaluatedKey != "undefined") {
-                console.log("Scanning for more...");
-                params.ExclusiveStartKey = data.LastEvaluatedKey;
-                docClient.scan(params, onScan);
-            }else{
-                data.Items.forEach(function(ingredient) {
-                    ingredients[ingredient.Ingredient]=null;
-                });
-                res.json(ingredients);
+    var queryObj={
+        query:{
+            match:{
+                "_id":0
             }
         }
-    }
+    };
+    esClient.search({
+        index:"recipii",
+        type:"ingredient",
+        body: queryObj
+    }).then(function(response){
+        var results = response.hits;
+        res.json(results);
+    });
 });
 
 module.exports = router;
