@@ -35,9 +35,24 @@
     </div>
 
 
+
 <div class="row">
 
     <a href="/submit">Submit your own recipe</a>
+</div>
+
+<h3 style="background: #8e665f;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    color: white;
+    font-weight: 100;
+    font-size: 30px;">My Favorites</h3>
+
+<div style="margin-top:-90px" class="carousel">
+    {{#each favorites}}
+        <a class="carousel-item" data-recipe-name="{{Recipe}}" href="#"><img src="{{recipe_photo}}"></a>
+    {{/each}}
 </div>
 <script>
     $(document).ready(function(){

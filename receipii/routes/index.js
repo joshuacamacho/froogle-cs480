@@ -85,10 +85,20 @@ router.get('/pantry', checkAuth, function(req, res, next) {
     docClient.batchGet(params, function(err, data) {
         console.log('error: '+ err);
         // console.log(jsDump.parse(data));
-        res.render('pantry', {
-            title: 'My Pantry',
-            submitted: data.Responses.Recipes
+        params.RequestItems.Recipes.Keys=[];
+        if(req.user.Item.favorite_recipes){
+            req.user.Item.favorite_recipes.forEach(function(element){
+                params.RequestItems.Recipes.Keys.push({"Recipe":element});
+            });
+        }
+        docClient.batchGet(params, function(err, d) {
+            res.render('pantry', {
+                title: 'My Pantry',
+                submitted: data.Responses.Recipes,
+                favorites: d.Responses.Recipes
+            });
         });
+
     });
 
 });
