@@ -41,11 +41,25 @@
         width: 25px;
         height: 25px;
     }
+    #recipe_loading {
+        background: url(img/placeholder.png) no-repeat center center fixed;
+        background-size: cover;
+        overflow: hidden;
+        filter: blur(8px);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 4000;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 </style>
 
 
 <div id="recipe" class="modal">
     <div  style="padding:0" class="modal-content">
+        <div id="recipe_loading"></div>
         <div style="position:relative" class="row">
         <div id="close_recipe"><i  class="material-icons">close</i></div>
         {{#if user}}
@@ -169,11 +183,12 @@
             );
             stepCount++;
         });
-
+        $('#recipe_loading').hide();
 
     }
 
     function recipeInit(name){
+        $('#recipe_loading').show();
         $('#recipe').modal('open');
         $.ajax({
             method: "GET",
