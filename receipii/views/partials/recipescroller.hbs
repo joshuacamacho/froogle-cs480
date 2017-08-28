@@ -50,6 +50,7 @@
 
     function initScroller(r,a){
         if(r==="trending"){
+            $('#trendingHeader').html("Trending Recipes");
             $.ajax({
                 method: "GET",
                 url: "/recipe",

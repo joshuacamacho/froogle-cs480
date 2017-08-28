@@ -4,24 +4,35 @@
 
 <script>
     $(document).ready(function(){
-        $('.chips').material_chip({
-            placeholder:"Enter Ingredients",
-            autocompleteOptions: {
-                data: {
-                    'egg': null,
-                    'chicken': null,
-                    'salmon': null
-                },
-                limit: Infinity,
-                minLength: 1
-            }
+        $.ajax({
+            method: "GET",
+            url: "/allIngredients",
+            data: {}
+        }).done(function( msg ) {
+            console.log(msg);
+            $('.chips').material_chip({
+                placeholder:"Enter Ingredients",
+                autocompleteOptions: {
+                    data: msg,
+                    limit: Infinity,
+                    minLength: 1
+                }
+            });
         });
     });
-    var searchItems=[];
     $('.chips').on('chip.add', function(e, chip){
         // you have the added chip here
         $('#registerSection').hide();
         console.log($('.chips').material_chip('data'));
         initScroller("search",$('.chips').material_chip('data'));
+    });
+    $('.chips').on('chip.delete', function(e, chip){
+        // you have the added chip here
+        if($('.chips').material_chip('data').length>0) {
+            console.log($('.chips').material_chip('data'));
+            initScroller("search", $('.chips').material_chip('data'));
+        }else{
+            initScroller("trending","50");
+        }
     });
 </script>
