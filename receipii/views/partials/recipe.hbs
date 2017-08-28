@@ -32,6 +32,12 @@
         padding: 5px;
         border-bottom: 1px solid black;
     }
+    #favorite_recipe{
+        position: absolute;
+        right: 8px;
+        color: #a6a663;
+        top: 8px;
+    }
 </style>
 
 
@@ -39,6 +45,9 @@
     <div  style="padding:0" class="modal-content">
         <div style="position:relative" class="row">
         <div id="close_recipe"><i  class="material-icons">close</i></div>
+        {{#if user}}
+            <div id="favorite_recipe"><i  class="material-icons">star_border</i></div>
+        {{/if}}
         <h6 id="recipe_name">Test</h6>
         <img id="recipe_image" class="responsive-img" src="https://dw75asfpu22ml.cloudfront.net/recipe/8e5f9fa8-4cc9-42a5-82a5-dd126ded9019.jpg">
         </div>
@@ -124,6 +133,7 @@
     function dataInit(r) {
         $('#recipe_name').html(r.Recipe);
         $('#recipe_image').attr("src", r.recipe_photo);
+        $('#favorite_recipe').attr("data-recipe-name", r.Recipe);
         $('#ingredients_list').empty();
         JSON.parse(r.ingredients).forEach(function (element) {
             $('#ingredients_list').append(
@@ -168,5 +178,20 @@
     }
     $('#close_recipe').on('click',function(){
         $('#recipe').modal('close');
+    });
+
+
+    $('#favorite_recipe').on('click',function(){
+        var name = $(this).attr('data-recipe-name');
+        console.log(name);
+        var icon =$($(this).children()[0]);
+        if(icon.html()=='star_border'){
+            console.log("not favorite");
+            icon.html("star");
+            Materialize.toast('Added to favorites!', 4000);
+        }else{
+            icon.html("star_border");
+            Materialize.toast('Removed from favorites', 4000);
+        }
     });
 </script>
