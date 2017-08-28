@@ -149,37 +149,43 @@ router.get('/recipeIndex', function(req, res){
         Limit:"100"
     };
     docClient.scan(params, onScan);
+    var allItems=[];
     function onScan(err, data) {
         if (err) {
             console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
         } else {
-            // print all the movies
-            console.log("Scan succeeded.");
-            res.json(data.Items);
-            var idCount=0;
-            data.Items.forEach(function(recipe) {
-                if(IsJsonString(recipe.ingredients))
-                recipe.ingredients = JSON.parse(recipe.ingredients);
-                if(IsJsonString(recipe.steps))
-                recipe.steps=JSON.parse(recipe.steps);
-                esClient.create({
-                    index: 'recipii',
-                    type: 'recipe',
-                    id: idCount.toString(),
-                    body: recipe
-                }, function (error, response) {
-                    // ...
-                });
-                idCount++;
+            data.Items.forEach(function(d){
+                allItems.push(d);
             });
 
             // continue scanning if we have more movies, because
             // scan can retrieve a maximum of 1MB of data
-            // if (typeof data.LastEvaluatedKey != "undefined") {
-            //     console.log("Scanning for more...");
-            //     params.ExclusiveStartKey = data.LastEvaluatedKey;
-            //     docClient.scan(params, onScan);
-            // }
+            if (typeof data.LastEvaluatedKey != "undefined") {
+                console.log("Scanning for more...");
+                params.ExclusiveStartKey = data.LastEvaluatedKey;
+                docClient.scan(params, onScan);
+            }else{
+
+                var idCount=0;
+                allItems.forEach(function(recipe) {
+                    if(IsJsonString(recipe.ingredients))
+                        recipe.ingredients = JSON.parse(recipe.ingredients);
+                    if(IsJsonString(recipe.steps))
+                        recipe.steps=JSON.parse(recipe.steps);
+                    esClient.create({
+                        index: 'recipii',
+                        type: 'recipe',
+                        id: idCount.toString(),
+                        body: recipe
+                    }, function (error, response) {
+                        // ...
+                    });
+                    idCount++;
+                });
+                // print all the movies
+                console.log("Scan succeeded.");
+                res.json(data.Items);
+            }
         }
     }
 });
@@ -247,10 +253,13 @@ router.get('/recipeSearch', function(req, res, next) {
         size:100
     };
     req.query.terms.forEach(function(item){
-        queryObj.query.bool.should.push({
-           wildcard:{
-               "ingredients.name": "*"+item.tag.toLowerCase()+"*"
-           }
+        var split = item.tag.split(" ");
+        split.forEach(function(part){
+            queryObj.query.bool.should.push({
+               wildcard:{
+                   "ingredients.name": "*"+part.toLowerCase()+"*"
+               }
+            });
         });
     });
 
