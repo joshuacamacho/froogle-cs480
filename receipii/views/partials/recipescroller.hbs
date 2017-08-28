@@ -3,14 +3,30 @@
         background: rgba(0, 0, 0, 0.44) !important;
         width: 100% !important;
     }
+    #trendingHeader{
+        font-size: 30px;
+        text-align: center;
+        background: #c7851d;
+        padding: 16px;
+        color: white;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+    .card{
+        margin-top: 0 !important;
+    }
 </style>
+<h3 id="trendingHeader">Trending Recipes</h3>
 <div id="scroller_container" >
 
 </div>
 <script>
 
     function cardInit(r){
+        $('#scroller_container').empty();
         r.forEach(function(element){
+            if(element._source) element=element._source;
+
             if(element.recipe_photo){
                 var item = $('<div data-recipe-name="'+element.Recipe+'" class="card">\n' +
                         '        <div class="card-image">\n' +
@@ -33,16 +49,26 @@
     }
 
     function initScroller(r,a){
-        if(r==='trending'){
-
+        if(r==="trending"){
+            $.ajax({
+                method: "GET",
+                url: "/recipe",
+                data: { "amount": a }
+            }).done(function( msg ) {
+                console.log(msg);
+                cardInit(msg);
+            });
         }
-        $.ajax({
-            method: "GET",
-            url: "/recipe",
-            data: { "amount": a }
-        }).done(function( msg ) {
-            console.log(msg);
-            cardInit(msg);
-        });
+        if(r==='search'){
+            $.ajax({
+                method: "GET",
+                url: "/recipeSearch",
+                data: { terms: a }
+            }).done(function( msg ) {
+                $('#trendingHeader').html("Search Results");
+                console.log(msg);
+                cardInit(msg.hits);
+            });
+        }
     }
 </script>

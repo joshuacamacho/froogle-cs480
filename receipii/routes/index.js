@@ -3,10 +3,15 @@ var router = express.Router();
 var AWS = require('aws-sdk');
 var sha256 = require('sha256');
 var passport = require('../passport-config');
+var elasticsearch = require('elasticsearch');
 
 AWS.config.update({region:'us-east-1'});
 
 var docClient = new AWS.DynamoDB.DocumentClient();
+var esClient = new elasticsearch.Client({
+    host: 'https://search-recipii-n4zq5wv364fpot4gkwft43wzbm.us-west-1.es.amazonaws.com',
+    log: 'trace'
+});
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) {
@@ -72,9 +77,11 @@ router.get('/pantry', checkAuth, function(req, res, next) {
             }
         }
     };
-    req.user.Item.submitted_recipes.values.forEach(function(element){
-        params.RequestItems.Recipes.Keys.push({"Recipe":element});
-    });
+    if(req.user.Item.submitted_recipes){
+        req.user.Item.submitted_recipes.values.forEach(function(element){
+            params.RequestItems.Recipes.Keys.push({"Recipe":element});
+        });
+    }
     docClient.batchGet(params, function(err, data) {
         console.log('error: '+ err);
         // console.log(jsDump.parse(data));
@@ -121,6 +128,60 @@ router.get('/logout', function(req, res){
     res.locals.users = null;
     req.logout();
     res.redirect('/');
+});
+
+router.get('/clearIndex', function(req, res){
+
+});
+
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+router.get('/recipeIndex', function(req, res){
+    var params = {
+        TableName: "Recipes",
+        Limit:"100"
+    };
+    docClient.scan(params, onScan);
+    function onScan(err, data) {
+        if (err) {
+            console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            // print all the movies
+            console.log("Scan succeeded.");
+            res.json(data.Items);
+            var idCount=0;
+            data.Items.forEach(function(recipe) {
+                if(IsJsonString(recipe.ingredients))
+                recipe.ingredients = JSON.parse(recipe.ingredients);
+                if(IsJsonString(recipe.steps))
+                recipe.steps=JSON.parse(recipe.steps);
+                esClient.create({
+                    index: 'recipii',
+                    type: 'recipe',
+                    id: idCount.toString(),
+                    body: recipe
+                }, function (error, response) {
+                    // ...
+                });
+                idCount++;
+            });
+
+            // continue scanning if we have more movies, because
+            // scan can retrieve a maximum of 1MB of data
+            // if (typeof data.LastEvaluatedKey != "undefined") {
+            //     console.log("Scanning for more...");
+            //     params.ExclusiveStartKey = data.LastEvaluatedKey;
+            //     docClient.scan(params, onScan);
+            // }
+        }
+    }
 });
 
 router.get('/recipe', function(req, res){
@@ -172,6 +233,36 @@ router.get('/recipe', function(req, res){
     }
 
 
+
+
+});
+
+router.get('/recipeSearch', function(req, res, next) {
+    var queryObj={
+        query:{
+            bool:{
+                should:[]
+            }
+        },
+        size:100
+    };
+    req.query.terms.forEach(function(item){
+        queryObj.query.bool.should.push({
+           wildcard:{
+               "ingredients.name": "*"+item.tag.toLowerCase()+"*"
+           }
+        });
+    });
+
+    esClient.search({
+       index:"recipii",
+        type:"recipe",
+        body: queryObj
+    }).then(function(response){
+       console.log(response);
+       var results = response.hits;
+       res.json(results);
+    });
 });
 
 router.get('/ingredient', function(req, res){
