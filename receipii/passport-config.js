@@ -43,7 +43,7 @@ passport.use(new LocalStrategy(
                 //return the response from callback when an error happen
                 return done(err);
             } else {
-                if (item && sha256(pass) === item.Item.password) {
+                if (item.Item && sha256(pass) === item.Item.password) {
                    //return the response from callback when the login is ok
                     console.log("Valid user");
                     return done(null, item);
