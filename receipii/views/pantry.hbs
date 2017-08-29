@@ -49,9 +49,9 @@
     font-weight: 100;
     font-size: 30px;">My Favorites</h3>
 
-<div style="margin-top:-30px;height: 263px;" class="carousel">
+<div id="favorites" style="margin-top:-30px;height: 263px;" class="carousel">
     {{#each favorites}}
-        <a class="carousel-item" data-recipe-name="{{Recipe}}" href="#"><img src="{{recipe_photo}}"></a>
+        <a class="carousel-item" data-recipe-name="{{Recipe}}" href="#favorites"><img src="{{recipe_photo}}"></a>
     {{/each}}
 </div>
 

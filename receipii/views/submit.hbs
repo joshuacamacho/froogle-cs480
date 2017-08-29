@@ -1,11 +1,22 @@
 <div class="container" style="padding-top: 30px;">
-
+<form id="submit_form" method="post" enctype="multipart/form-data">
 <div class="row">
     <div class="input-field col s8">
         <input placeholder="Enter a name for your recipe" id="name" type="text" class="validate">
         <label for="name">Recipe Name</label>
     </div>
 </div>
+    <div class="row">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input name="photo" type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input placeholder="Upload an image for your recipe" class="file-path validate" type="text">
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <ul class="collapsible ingredients" data-collapsible="expandable">
@@ -41,7 +52,7 @@
     <div class="row">
         <button class="btn waves-effect waves-light" id="submit">Submit Recipe</button>
     </div>
-
+</form>
 </div>
 
 
@@ -73,7 +84,25 @@
     }
     $('.new').on('click',handleNew);
 
-    $('#submit').on('click',function(){
+//    $('#submit').on('click',function(){
+//
+//
+//        $.ajax({
+//            url: '/submit',
+//            type: 'POST',
+//            contentType: 'application/json',
+//            data: JSON.stringify(recipe),
+//            dataType: 'json'
+//        }).done(function(){
+//            alert('Your recipe is submitted');
+//        });
+//
+//    });
+
+    $("form#submit_form").submit(function(){
+
+        var formData = new FormData(this);
+
         recipe.Recipe = $('#name').val();
         recipe.steps = [];
         recipe.ingredients = [];
@@ -94,16 +123,19 @@
         });
         console.log(recipe);
 
-        $.ajax({
-            url: '/submit',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(recipe),
-            dataType: 'json'
-        }).done(function(){
-            alert('Your recipe is submitted');
-        });
+        formData.append("recipe",JSON.stringify(recipe));
+        console.log(formData);
+            $.ajax({
+                url: "/submit",
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
+            }).done(function(res){
 
+            });
+
+        return false;
     });
-
 </script>

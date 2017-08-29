@@ -4,9 +4,13 @@ var AWS = require('aws-sdk');
 var sha256 = require('sha256');
 var passport = require('../passport-config');
 var elasticsearch = require('elasticsearch');
-
+var multer = require('multer');
+var moment = require('moment');
 AWS.config.update({region:'us-east-1'});
 
+var storage = multer.memoryStorage();
+var upload = multer({ storage: storage });
+var s3 = new AWS.S3();
 var docClient = new AWS.DynamoDB.DocumentClient();
 var esClient = new elasticsearch.Client({
     host: 'https://search-recipii-n4zq5wv364fpot4gkwft43wzbm.us-west-1.es.amazonaws.com',
@@ -91,11 +95,17 @@ router.get('/pantry', checkAuth, function(req, res, next) {
                 params.RequestItems.Recipes.Keys.push({"Recipe":element});
             });
         }
+        var sub;
+        if(err) sub={};
+        else sub=data.Responses.Recipes;
         docClient.batchGet(params, function(err, d) {
+            var fav;
+            if(err) fav={};
+            else fav= d.Responses.Recipes;
             res.render('pantry', {
                 title: 'My Pantry',
-                submitted: data.Responses.Recipes,
-                favorites: d.Responses.Recipes
+                submitted: sub,
+                favorites: fav
             });
         });
 
@@ -108,25 +118,54 @@ router.get('/submit', checkAuth, function(req, res, next) {
     res.render('submit', { title: 'Recipe Submit' });
 });
 
-router.post('/submit', checkAuth, function(req, res, next) {
-    res.locals.user = req.user.Item;
-    var recipe = req.body;
-    recipe.user = res.locals.user;
-    var params = {
-        TableName: "Recipes",
-        Item: recipe
-    };
-    docClient.put(params, function(err, data) {
-        if (err) {
-            console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("Added item:", JSON.stringify(data));
+router.post('/submit', checkAuth, upload.any(), function(req, res, next) {
+        res.locals.user = req.user.Item;
+        var recipe = JSON.parse(req.body.recipe);
+        recipe.user = res.locals.user;
+        var imageName=sha256(req.files[0].originalname)+ new moment().format("DD_MM_YY_hh_mm_ss")+".jpg";
+        var params = {
+            Body: req.files[0].buffer,
+            Bucket: "recipiis",
+            Key: imageName,
+            ContentType:req.files[0].mimetype
+        };
+        s3.putObject(params, function(err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
+            recipe.recipe_photo="https://s3.us-east-2.amazonaws.com/recipiis/"+imageName;
+            var params = {
+                TableName: "Recipes",
+                Item: recipe
+            };
+            docClient.put(params, function(err, data) {
+                if (err) {
+                    console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+                } else {
+                    console.log("Added item:", JSON.stringify(data));
+                    var recipeNames = res.locals.user.submitted_recipes.values;
+                    recipeNames.push(recipe.Recipe);
+                    var params = {
+                        TableName:"Users",
+                        Key:{
+                            "Email": res.locals.user.Email
+                        },
+                        UpdateExpression: "set ingredients = :f",
+                        ExpressionAttributeValues:{
+                            ":f":recipeNames
+                        }
+                    };
+                    docClient.put(params, function(err, data) {
+                        console.log(err);
+                    });
+                    // res.redirect('/pantry');
 
-            // res.redirect('/pantry');
+                }
+            });
+            res.json({});
+        });
 
-        }
-    });
-    res.json({});
+
+
 });
 
 router.post('/login',
