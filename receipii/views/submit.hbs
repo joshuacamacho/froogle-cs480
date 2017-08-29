@@ -108,7 +108,9 @@
         recipe.ingredients = [];
         $('.step').each(function(){
             if($(this).find('textarea')[0].value!=""){
-                recipe.steps.push($(this).find('textarea')[0].value);
+                recipe.steps.push({
+                    text:$(this).find('textarea')[0].value
+                });
             }
         });
 

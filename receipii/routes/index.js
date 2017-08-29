@@ -82,7 +82,7 @@ router.get('/pantry', checkAuth, function(req, res, next) {
         }
     };
     if(req.user.Item.submitted_recipes){
-        req.user.Item.submitted_recipes.values.forEach(function(element){
+        req.user.Item.submitted_recipes.forEach(function(element){
             params.RequestItems.Recipes.Keys.push({"Recipe":element});
         });
     }
@@ -121,13 +121,14 @@ router.get('/submit', checkAuth, function(req, res, next) {
 router.post('/submit', checkAuth, upload.any(), function(req, res, next) {
         res.locals.user = req.user.Item;
         var recipe = JSON.parse(req.body.recipe);
-        recipe.user = res.locals.user;
+        recipe.user = res.locals.user.Email;
         var imageName=sha256(req.files[0].originalname)+ new moment().format("DD_MM_YY_hh_mm_ss")+".jpg";
         var params = {
             Body: req.files[0].buffer,
             Bucket: "recipiis",
             Key: imageName,
-            ContentType:req.files[0].mimetype
+            ContentType:req.files[0].mimetype,
+            ACL: 'public-read'
         };
         s3.putObject(params, function(err, data) {
             if (err) console.log(err, err.stack); // an error occurred
@@ -142,19 +143,22 @@ router.post('/submit', checkAuth, upload.any(), function(req, res, next) {
                     console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
                 } else {
                     console.log("Added item:", JSON.stringify(data));
-                    var recipeNames = res.locals.user.submitted_recipes.values;
+                    var recipeNames=[];
+                    if(res.locals.user.submitted_recipes){
+                        recipeNames = res.locals.user.submitted_recipes;
+                    }
                     recipeNames.push(recipe.Recipe);
                     var params = {
                         TableName:"Users",
                         Key:{
                             "Email": res.locals.user.Email
                         },
-                        UpdateExpression: "set ingredients = :f",
+                        UpdateExpression: "set submitted_recipes = :f",
                         ExpressionAttributeValues:{
                             ":f":recipeNames
                         }
                     };
-                    docClient.put(params, function(err, data) {
+                    docClient.update(params, function(err, data) {
                         console.log(err);
                     });
                     // res.redirect('/pantry');
