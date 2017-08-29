@@ -5623,11 +5623,12 @@ if (jQuery) {
         if (13 === e.which) {
           // Override enter if autocompleting.
           if (self.hasAutocomplete && $chips.find('.autocomplete-content.dropdown-content').length && $chips.find('.autocomplete-content.dropdown-content').children().length) {
-            return;
+            // return;
           }
 
           e.preventDefault();
           self.addChip({ tag: $target.val() }, $chips);
+          $chips.find('.autocomplete-content').empty();
           $target.val('');
           return;
         }
