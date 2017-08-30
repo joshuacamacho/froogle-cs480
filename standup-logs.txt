@@ -894,7 +894,7 @@ Sure divya
 ---------------------------------------------------------------------------------------------------
 
 8/24
-Present: Nathan,Thomas,Ben
+Present: Nathan,Thomas,Ben,Divya
 LOG
 
 nathan [11:59 AM] 
@@ -905,38 +905,150 @@ Yesterday I worked on the ingredient population script, today I hope to finish t
 
 ben [12:01 PM] 
 Yesterday, I worked on the ingredient view. Today, I will keep working on that and update the standup logs.
+
+divya1224 [3:54 PM] 
+Yesterday, I worked on the test cases. Today , I will continue to work on it
 ---------------------------------------------------------------------------------------------------
 
 8/25
-Present: 
+Present: Everyone
 LOG
 
----------------------------------------------------------------------------------------------------
+nathan [9:01 AM] 
+standup
 
-8/26
-Present: 
-LOG
+ben [9:03 AM] 
+Yesterday, I worked on the ingredient view, but without much success. Today, I will give it another try and work with Nathan on the presentation.
 
----------------------------------------------------------------------------------------------------
+joshuajcamacho [9:04 AM] 
+Yesterday I worked on the search feature and same for today
 
-8/27
-Present: 
-LOG
 
+[9:04] 
+@ben I looked it.over and can help you
+
+nathan [9:05 AM] 
+Yesterday, I filled out a lot of the presentation with pictures and stuff to talk about. Today, I plan to cover everything we accomplished so far on both the presentation and the report
+
+thomaslv [10:17 AM] 
+Yesterday I worked some more on the ingredient data, today I will continue.
+
+divya1224 [11:07 AM] 
+Yesterday: I worked on test case scenarios .Today: I will continue on it..
+
+
+[11:08] 
+@joshuajcamacho Did you get a chance to look at the icons for Landing and Pantry Page ?
+
+joshuajcamacho [11:09 AM] 
+Not yet @divya1224 . Could you put in a pull request?
+
+divya1224 [11:10 AM] 
+I have 2 pull requests .. Do you want a new one ?
+
+joshuajcamacho [11:12 AM] 
+No that's fine thank you
+
+divya1224 [11:13 AM] 
+sure..
 ---------------------------------------------------------------------------------------------------
 
 8/28
-Present: 
+Present: Everyone
 LOG
 
+divya1224 [8:59 AM] 
+#standup
+
+joshuajcamacho [9:00 AM] 
+Today I will work on the "favorite recipe" feature and let users add ingredients to their pantry
+
+nathan [9:01 AM] 
+This weekend, I made slides for all the topics on the powerpoint except searching, and worked on the project report. Anything that's not finished on the report has comments next to it, so anyone can help finish it.
+
+divya1224 [9:01 AM] 
+Yesterday: I created use case scenarios and uploaded the spreadsheet into Google Drive. Pl have a look and let me know for any changes. Also, I pushed the changes for Icons to Register,Login and Pantry View. Today : I'll complete all the use case scenarios
+
+nathan [9:01 AM] 
+Today, I plan to continue working on the project report
+
+ben [9:02 AM] 
+This weekend, I finished making the ingredient view's contents dynamic, and helped Nathan on the presentation slides. Today, I will work on the project report.
+
+
+[9:03] 
+@divya1224 we left the Testing slide on the presentation for you to fill out. It just needs a picture and a sentence or two
+
+divya1224 [9:03 AM] 
+sure ben
+
+thomaslv [9:03 AM] 
+Today I'll check out the project report and help where I see comments. If you guys need any help with anything let me know please.
+
+divya1224 [9:05 AM] 
+I might need a hand in testing as it is a good practice to have multiple testers test it.. I can give each of you 2 of them.. it should be quick.. shouldn't take more than 15 mins..
+
+thomaslv [9:06 AM] 
+I can definitely help out with the testing.
+
+ben [9:06 AM] 
+Sounds good
+
+divya1224 [9:07 AM] 
+thank you
 ---------------------------------------------------------------------------------------------------
 
 8/29
-Present: 
+Present: Everyone
 LOG
 
+thomaslv [11:10 AM] 
+Yesterday I looked over the presentation, today I will do some testing and add the style attribute to the recipes
+
+joshuajcamacho [11:10 AM] 
+Yesterday I implemented favorite, upload photo. Today I will work on unit testing
+
+divya1224 [11:11 AM] 
+Yesterday I worked on project timeline and use case testing scenarios. Today  I will  finish use case testing
+
+ben [11:11 AM] 
+Yesterday I worked on the project report and the presentation. Today I will keep working on those, work on some testing rows, and practice for the presentation
+
+nathan [11:11 AM] 
+Yesterday, I worked on the project report. Today, I will practice for the presentation and resolve the remaining problems in the report
 ---------------------------------------------------------------------------------------------------
 
 8/30
-Present: 
+Present: Everyone
 LOG
+
+nathan [9:03 AM] 
+Final standup!
+
+ben [9:04 AM] 
+Yesterday, I worked on use case testing and worked on the project report. Today Nathan and I have a final to take in the afternoon, but at 4:30 I will be available to do more testing, think of things we might have missed, and wrap up the project report. Also, I will complete the standup logs and merge them.
+
+nathan [9:05 AM] 
+Yesterday, I finished the project report except for some comments and code Thomas can fill in. Today, I will practice for the presentation and try to put finishing touches on anything I can find
+
+thomaslv [9:07 AM] 
+Yesterday I added some code examples and explanations to the project report. Today Ill add in where I can to the project report.
+
+joshuajcamacho [9:08 AM] 
+Yesterday I worked on unit testing. Today I'll work on unit testing. And getting that documented
+
+ben [9:09 AM] 
+@thomaslv Did you say you were going to add the recipe type tags to the database?
+
+thomaslv [9:09 AM] 
+Oh yeah I did a lot of them yesterday, ill do the rest today
+
+divya1224 [9:11 AM] 
+Yesterday I worked on use case testing and today I will complete the testing
+
+divya1224 [9:17 AM] 
+Also, I pushed in a fix for register view and login view.. @ joshuajcamacho .. Could you pl check and merge
+
+
+[9:17] 
+I also worked on project timeline and will finish the pending part today
