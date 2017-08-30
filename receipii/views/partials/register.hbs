@@ -20,7 +20,7 @@
   padding-left: 30px;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg") no-repeat scroll 0 0 transparent;
 }
-
+ 
 
 </style>
   <a class="waves-effect waves-light btn modal-trigger" href="#register">Register</a>
@@ -38,9 +38,9 @@
     
     <div class="input-field col s12">
       
-      <input required placeholder=" " id="email" name="username" type="email" class="validate" >
+      <input required placeholder=" " id="email" name="username" type="email" class="validate" />
       
-      <label <for="email"> <i class="material-icons"> email </i> Email  <data-error="Invalid Email" data-success="Valid Email"> </label>
+      <label <for="email" data-error="Please enter valid Email id" data-success="Valid Email id"> <i class="material-icons"> email </i> Email </label>
     </div>
     </div>
    <div class="row">
@@ -55,7 +55,8 @@
     <div class="input-field col s12">
       <input id="confirmpassword" type="password" class="validate" onkeyup="checkPass(); return false;" >
       <span id="confirmMessage" class="confirmMessage"></span>
-      <label <for="confirmpassword"> <i class="material-icons"> visibility </i> Confirm Password <data-error="Passwords do not match" data-success="Passwords Match"></label>
+      <label <for="confirmpassword" data-error="Passwords do not match" data-success="Passwords Match" > <i class="material-icons"> visibility </i> Confirm Password 
+      </label>
     </div>
     </div>
 
@@ -82,14 +83,15 @@
 
      
   <script type="text/javascript">
+
   $(".modal").modal();
  
 function checkPass()
 {
     //Store the password field objects into variables ...
 
-    //var pass1 = document.getElementById('password');
-    //var pass2 = document.getElementById('confirmpassword');
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('confirmpassword');
     //Store the Confimation Message Object ...
     var message = document.getElementById('confirmMessage');
     //Set the colors we will be using ...
@@ -97,7 +99,7 @@ function checkPass()
     var badColor = "#ff6666";
     //Compare the values in the password field 
     //and the confirmation field
-    if(password.value == confirmpassword.value){
+    if(pass1.value == pass2.value){
         //The passwords match. 
         //Set the color to the good color and inform
         //the user that they have entered the correct password 
@@ -112,6 +114,7 @@ function checkPass()
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
+
 }  
 
 
