@@ -147,7 +147,8 @@ router.post('/submit', checkAuth, upload.any(), function(req, res, next) {
                     if(res.locals.user.submitted_recipes){
                         recipeNames = res.locals.user.submitted_recipes;
                     }
-                    recipeNames.push(recipe.Recipe);
+                    if(!recipeNames.includes(recipe.Recipe))
+                        recipeNames.push(recipe.Recipe);
                     var params = {
                         TableName:"Users",
                         Key:{
