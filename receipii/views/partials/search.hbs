@@ -22,7 +22,7 @@
     });
     $('.chips').on('chip.add', function(e, chip){
         // you have the added chip here
-        $('#registerSection').hide();
+        
         console.log($('.chips').material_chip('data'));
         initScroller("search",$('.chips').material_chip('data'));
     });
