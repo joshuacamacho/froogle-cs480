@@ -9,19 +9,16 @@
 </style>
 
 <!-- Modal Structure -->
-<div id="ingredientView" class="modal modal-fixed-footer">
+<div id="ingredientView" class="modal">
     <div class="modal-content">
 
         <div id="close_ingredient"><i  class="material-icons">close</i></div>
         <div class="col"><h5 id="ingredient_name">Ingredient Name</h5></div>
 
-        <img id="ingredient_image" class="responsive-img" style="height: 50%" src="img/noImage.jpg">
+        <img id="ingredient_image" class="responsive-img" style="width: 100%" src="img/noImage.jpg">
 
-        <p id="ingredient_description">This is a discription of the ingredient. This is a discription of the ingredient. This is a discription of the ingredient.</p>
+        <p id="ingredient_description">No description available.</p>
 
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Find recipes</a>   <!-- #! ?-->
     </div>
 </div>
 
@@ -46,7 +43,7 @@
 
 
     function ingrDataInit(i) {
-        console.log("ccccccccccccccccccccccccccc in dataInit");
+        console.log("in dataInit");
         console.log(i.image);
         $('#ingredient_name').html(i.Ingredient);
         $('#ingredient_image').attr("src", i.image);//////image not being updated. Is this line the problem?
@@ -65,7 +62,7 @@
             data: { name: name }
         }).done(function( msg ) {
             console.log(msg);
-            console.log("ddddddddddddddddddddbefore dataInit");
+            console.log("before dataInit");
             ingrDataInit(msg);
         });
     }
