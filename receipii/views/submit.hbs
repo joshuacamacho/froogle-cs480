@@ -1,3 +1,31 @@
+<style>
+    #loader{
+        position: fixed;
+        left: 33%;
+        top: 42%;
+        padding: 11px 30px;
+        background: rgba(0, 0, 0, 0.77);
+        color: white;
+        display: none;
+        z-index: 6000;
+    }
+</style>
+
+<div id="loader">
+    <h6>Uploading Recipe</h6>
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
 <div class="container" style="padding-top: 30px;">
 <form id="submit_form" method="post" enctype="multipart/form-data">
 <div class="row">
@@ -10,7 +38,7 @@
         <div class="file-field input-field">
             <div class="btn">
                 <span>File</span>
-                <input name="photo" type="file">
+                <input id="fileUpload" name="photo" type="file">
             </div>
             <div class="file-path-wrapper">
                 <input placeholder="Upload an image for your recipe" class="file-path validate" type="text">
@@ -48,6 +76,9 @@
             </div>
         </li>
     </ul>
+    </div>
+    <div class="row" id="errorRow">
+
     </div>
     <div class="row">
         <button class="btn waves-effect waves-light" id="submit">Submit Recipe</button>
@@ -124,20 +155,37 @@
             }
         });
         console.log(recipe);
-
-        formData.append("recipe",JSON.stringify(recipe));
-        console.log(formData);
-            $.ajax({
-                url: "/submit",
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false
-            }).done(function(res){
-
-            });
+        if(validRecipe(recipe)){
+            formData.append("recipe",JSON.stringify(recipe));
+            console.log(formData);
+            $("#loader").show();
+                $.ajax({
+                    url: "/submit",
+                    type: 'POST',
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                }).done(function(res){
+                    window.location.replace("/pantry");
+                });
+        }else{
+            $('#errorRow').append('<h6 style="color:#ff4033">Error. Fields Missing or invalid</h6>');
+        }
 
         return false;
     });
+
+    function validRecipe(r){
+        if(!r.Recipe || r.Recipe==""){
+            return false;
+        }
+        if(r.steps.length == 0) return false;
+        if(r.ingredients.length==0 ) return false;
+        if ($('#fileUpload').get(0).files.length === 0) {
+            return false;
+        }
+
+        return true;
+    }
 </script>
