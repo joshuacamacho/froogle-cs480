@@ -184,10 +184,6 @@ router.get('/logout', function(req, res){
     res.redirect('/');
 });
 
-router.get('/clearIndex', function(req, res){
-
-});
-
 function IsJsonString(str) {
     try {
         JSON.parse(str);
@@ -246,6 +242,10 @@ router.get('/recipeIndex', function(req, res){
 
 router.get('/recipe', function(req, res){
     var name = req.query.name;
+    if(!name && !req.query.amount){
+        res.sendStatus(400);
+        return;
+    }
     var params = {
         TableName: "Recipes",
 
