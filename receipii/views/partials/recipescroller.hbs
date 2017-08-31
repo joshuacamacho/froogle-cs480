@@ -24,6 +24,7 @@
 
     function cardInit(r){
         $('#scroller_container').empty();
+        var count=0;
         r.forEach(function(element){
             if(element._source) element=element._source;
 
@@ -35,6 +36,10 @@
                 '</div>\n' +
                 '</div>')
                 $('#scroller_container').append(item);
+                if(count==3){
+                    Materialize.fadeInImage('.card img');
+                }
+                count++;
             }
         });
         $('.card').on('click',function(){
